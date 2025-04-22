@@ -317,11 +317,11 @@ body {
 
 
 <script>
-// Function to animate each counter
+// Function to animate counting
 function animateCounter(counter) {
   const target = +counter.getAttribute('data-target');
   let current = 0;
-  const speed = 200; // Higher = slower
+  const speed = 200; // Adjust this for faster/slower counting
 
   const updateCounter = () => {
     const increment = Math.ceil(target / speed);
@@ -336,7 +336,7 @@ function animateCounter(counter) {
   updateCounter();
 }
 
-// Intersection Observer to trigger counting when visible
+// Intersection Observer to trigger when section is visible
 const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -346,12 +346,13 @@ const observer = new IntersectionObserver((entries, observer) => {
           counter.classList.add('counted'); // Prevent re-running
         }
       });
+      observer.unobserve(entry.target); // Stop observing once counted
     }
   });
-}, { threshold: 0.5 }); // Trigger when 50% visible
+}, { threshold: 0.5 }); // Trigger when 50% of the section is visible
 
-// Observe the milestone section
-const milestoneSection = document.querySelector('.milestone-section');
+// Now select your section and observe
+const milestoneSection = document.querySelector('section'); // Select your provided section
 if (milestoneSection) {
   observer.observe(milestoneSection);
 }
