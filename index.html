@@ -197,7 +197,7 @@
 </section>
 <!-- 80% DONE ✅ -->
 <!-- ===== Achievements / Milestones Section (85%) ===== -->
-<section style="padding: 50px 20px; text-align: center; background-color: #1e293b; border-top: 1px solid #334155; border-bottom: 1px solid #334155;">
+<section id="milestones" style="padding: 50px 20px; text-align: center; background-color: #1e293b; border-top: 1px solid #334155; border-bottom: 1px solid #334155;">
   <h2 style="color: #93c5fd; margin-bottom: 30px;">🏆 Our Journey So Far</h2>
   <p style="margin-bottom: 40px;">Proudly serving gamers across India with fast and secure top-up solutions.</p>
 
@@ -216,7 +216,6 @@
     </div>
   </div>
 </section>
-
 
 
 
@@ -317,11 +316,10 @@ body {
 
 
 <script>
-// Function to animate counting
 function animateCounter(counter) {
   const target = +counter.getAttribute('data-target');
   let current = 0;
-  const speed = 200; // Adjust this for faster/slower counting
+  const speed = 200;
 
   const updateCounter = () => {
     const increment = Math.ceil(target / speed);
@@ -336,24 +334,27 @@ function animateCounter(counter) {
   updateCounter();
 }
 
-// Intersection Observer to trigger when section is visible
 const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.querySelectorAll('.counter').forEach(counter => {
         if (!counter.classList.contains('counted')) {
           animateCounter(counter);
-          counter.classList.add('counted'); // Prevent re-running
+          counter.classList.add('counted');
         }
       });
-      observer.unobserve(entry.target); // Stop observing once counted
+      observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.5 }); // Trigger when 50% of the section is visible
+}, { threshold: 0.5 });
 
-// Now select your section and observe
-const milestoneSection = document.querySelector('section'); // Select your provided section
+const milestoneSection = document.querySelector('#milestones');
 if (milestoneSection) {
   observer.observe(milestoneSection);
 }
 </script>
+
+
+<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="0ddef963-7f2e-4540-82bf-805fb9dece80";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+
+
