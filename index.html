@@ -317,17 +317,17 @@ body {
 
 
 <script>
-<script>
-// Counter function
+// Function to animate each counter
 function animateCounter(counter) {
   const target = +counter.getAttribute('data-target');
-  const increment = target / 200;
   let current = 0;
+  const speed = 200; // Higher = slower
 
   const updateCounter = () => {
+    const increment = Math.ceil(target / speed);
     if (current < target) {
       current += increment;
-      counter.innerText = Math.ceil(current);
+      counter.innerText = current > target ? target : current;
       requestAnimationFrame(updateCounter);
     } else {
       counter.innerText = target;
@@ -336,27 +336,23 @@ function animateCounter(counter) {
   updateCounter();
 }
 
-// Intersection Observer Setup
-const counters = document.querySelectorAll('.counter');
-const observer = new IntersectionObserver(entries => {
+// Intersection Observer to trigger counting when visible
+const observer = new IntersectionObserver((entries, observer) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      const section = entry.target;
-      section.querySelectorAll('.counter').forEach(counter => {
-        if (!counter.classList.contains('animated')) {
+      entry.target.querySelectorAll('.counter').forEach(counter => {
+        if (!counter.classList.contains('counted')) {
           animateCounter(counter);
-          counter.classList.add('animated'); // To avoid re-triggering
+          counter.classList.add('counted'); // Prevent re-running
         }
       });
     }
   });
-}, { threshold: 0.5 }); // Trigger when 50% of the section is visible
+}, { threshold: 0.5 }); // Trigger when 50% visible
 
 // Observe the milestone section
 const milestoneSection = document.querySelector('.milestone-section');
 if (milestoneSection) {
   observer.observe(milestoneSection);
 }
-</script>
-
 </script>
