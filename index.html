@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Born2Earn Game Shop - Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Poppins', sans-serif; background-color: #0f172a; color: #e2e8f0; overflow-x: hidden; }
+    header { background: linear-gradient(135deg, #6366f1, #8b5cf6); padding: 50px 20px; text-align: center; color: white; border-bottom-left-radius: 50px; border-bottom-right-radius: 50px; }
+    .logo { width: 100px; border-radius: 20px; margin-bottom: 20px; }
+    .shimmer { font-size: 2.5rem; font-weight: 700; background: linear-gradient(90deg, #ffffff, #93c5fd, #ffffff); background-size: 200% 100%; animation: shimmer 3s infinite linear; -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+    .button { background: linear-gradient(135deg, #FFD700, #FFC300); color: #0f172a; padding: 12px 30px; border: none; border-radius: 30px; font-weight: 600; text-decoration: none; margin: 10px; display: inline-block; background-size: 200% 100%; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .button:hover { transform: scale(1.05); box-shadow: 0 0 15px rgba(255, 215, 0, 0.8); background: linear-gradient(135deg, #FFC300, #FFD700); }
+  </style>
+</head>
+<body>
+<header>
+  <img src="https://html-generator.com/uploads/images/2023/12/27/90407_FP4TLZBEJ.png" alt="Born2Earn Logo" class="logo">
+  <h1 class="shimmer">Welcome to Born2Earn Game Shop</h1>
+  <p>Trusted platform for all your gaming top-ups and gift cards!</p>
+  <a class="button" href="https://www.born2earngameshop.in/" target="_blank">Visit WebStore</a>
+  <a class="button" href="https://storage.appilix.com/uploads/app-apk-658ad7c756795-1703598023.apk" download="Born2Earn">Download Apk</a>
+  <a class="button" href="https://play.google.com/store/apps/details?id=com.btoegameshop.app" target="_blank">Google Play</a>
+</header>
+<!-- 10% DONE ✅ -->
+
+<!-- ===== Scrolling Marquee (20%) ===== -->
+<div class="marquee">
+  <span>⚡ Instant Game Top-ups | Secure Payments | 24x7 Support | Download Now ⚡</span>
+</div>
+
+<!-- ===== Image Carousel / Slider Section (35%) ===== -->
+<section class="carousel-section" style="padding: 50px 20px; text-align: center;">
+  <h2 style="color: #93c5fd; margin-bottom: 20px;">🔥 Trending Games & Top-Ups</h2>
+  <div class="carousel-container" style="max-width: 900px; margin: 0 auto; position: relative; overflow: hidden; border-radius: 20px;">
+    <div class="carousel-slide" id="carousel-slide" style="display: flex; transition: transform 0.5s ease-in-out;">
+      <!-- Replace these image links with your own YouTube thumbnail-size images -->
+      <img src="https://via.placeholder.com/1280x720/6366f1/ffffff?text=Game+1" alt="Game 1" style="width: 100%; flex-shrink: 0;">
+      <img src="https://via.placeholder.com/1280x720/8b5cf6/ffffff?text=Game+2" alt="Game 2" style="width: 100%; flex-shrink: 0;">
+      <img src="https://via.placeholder.com/1280x720/38bdf8/ffffff?text=Game+3" alt="Game 3" style="width: 100%; flex-shrink: 0;">
+      <img src="https://via.placeholder.com/1280x720/facc15/000000?text=Game+4" alt="Game 4" style="width: 100%; flex-shrink: 0;">
+    </div>
+  </div>
+  <div style="margin-top: 15px;">
+    <button onclick="prevSlide()" class="button" style="background: #FFD700; color: #0f172a;">◀️ Prev</button>
+    <button onclick="nextSlide()" class="button" style="background: #FFD700; color: #0f172a;">Next ▶️</button>
+  </div>
+</section>
+
+<!-- ===== Carousel Script ===== -->
+<script>
+  const carouselSlide = document.getElementById('carousel-slide');
+  let counter = 0;
+  const totalSlides = carouselSlide.children.length;
+
+  function nextSlide() {
+    if (counter >= totalSlides - 1) counter = -1;
+    counter++;
+    updateCarousel();
+  }
+
+  function prevSlide() {
+    if (counter <= 0) counter = totalSlides;
+    counter--;
+    updateCarousel();
+  }
+
+  function updateCarousel() {
+    const slideWidth = carouselSlide.children[0].clientWidth;
+    carouselSlide.style.transform = `translateX(${-slideWidth * counter}px)`;
+  }
+
+  setInterval(nextSlide, 4000); // Auto-slide every 4 seconds
+</script>
+<!-- 35% DONE ✅ -->
+
+
+
+<!-- ===== Our Top-Up Services Section (50%) ===== -->
+<section class="features" style="max-width: 1100px; margin: 50px auto; padding: 30px; background-color: #1e293b; border-radius: 20px; box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);">
+  <h2 style="color: #93c5fd; font-size: 1.8rem; margin-bottom: 30px; text-align: center;">💎 Our Top-Up Services</h2>
+  <div class="grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px;">
+    
+    <div class="grid-item" style="background-color: #334155; padding: 20px; border-radius: 20px; text-align: center; transition: transform 0.3s ease;">
+      <img src="https://www.pngmart.com/files/22/Garena-Free-Fire-PNG-Pic.png" alt="Free Fire Diamonds" style="width: 120px; height: 120px; object-fit: contain; margin-bottom: 15px;">
+      <p><strong>Free Fire Diamonds:</strong><br>Secure and instant top-ups at great prices.</p>
+    </div>
+    
+    <div class="grid-item" style="background-color: #334155; padding: 20px; border-radius: 20px; text-align: center; transition: transform 0.3s ease;">
+      <img src="https://totalpng.com//public/uploads/preview/pubg-character-png-transparent-picture-11669375346hym6nwpbkz.png" alt="BGMI UC" style="width: 120px; height: 120px; object-fit: contain; margin-bottom: 15px;">
+      <p><strong>BGMI UC:</strong><br>Quick UC delivery to boost your battles.</p>
+    </div>
+    
+    <div class="grid-item" style="background-color: #334155; padding: 20px; border-radius: 20px; text-align: center; transition: transform 0.3s ease;">
+      <img src="https://freepngimg.com/thumb/call_of_duty/11-2-call-of-duty-png-clipart.png" alt="Call of Duty Points" style="width: 120px; height: 120px; object-fit: contain; margin-bottom: 15px;">
+      <p><strong>COD Points:</strong><br>Power up your game with authentic COD Points.</p>
+    </div>
+    
+    <div class="grid-item" style="background-color: #334155; padding: 20px; border-radius: 20px; text-align: center; transition: transform 0.3s ease;">
+      <img src="https://html-generator.com/uploads/images/2023/12/27/81701PHYA6U__NX.png" alt="Gift Cards" style="width: 120px; height: 120px; object-fit: contain; margin-bottom: 15px;">
+      <p><strong>Gift Cards:</strong><br>Amazon, Google Play & more — delivered instantly!</p>
+    </div>
+    
+  </div>
+</section>
+<!-- 50% DONE ✅ -->
+<!-- ===== Why Choose Us Section (60%) ===== -->
+<section style="padding: 50px 20px; text-align: center;">
+  <h2 style="color: #93c5fd; margin-bottom: 30px;">💯 Why Choose Born2Earn?</h2>
+  <div style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
+
+    <div style="background-color: #334155; padding: 20px; border-radius: 20px;">
+      <i class="fa fa-bolt" style="font-size: 30px; color: #facc15;"></i>
+      <h3 style="margin-top: 15px; color: #93c5fd;">Instant Delivery</h3>
+      <p>Top-ups are processed in real-time, so you can start playing immediately.</p>
+    </div>
+
+    <div style="background-color: #334155; padding: 20px; border-radius: 20px;">
+      <i class="fa fa-lock" style="font-size: 30px; color: #facc15;"></i>
+      <h3 style="margin-top: 15px; color: #93c5fd;">Secure Payments</h3>
+      <p>Trusted payment partners with encrypted transactions for your safety.</p>
+    </div>
+
+    <div style="background-color: #334155; padding: 20px; border-radius: 20px;">
+      <i class="fa fa-thumbs-up" style="font-size: 30px; color: #facc15;"></i>
+      <h3 style="margin-top: 15px; color: #93c5fd;">Verified Sources</h3>
+      <p>All top-ups come from genuine sources — no risks, only rewards.</p>
+    </div>
+
+    <div style="background-color: #334155; padding: 20px; border-radius: 20px;">
+      <i class="fa fa-headphones" style="font-size: 30px; color: #facc15;"></i>
+      <h3 style="margin-top: 15px; color: #93c5fd;">24x7 Support</h3>
+      <p>Get your queries resolved anytime through our quick customer support.</p>
+    </div>
+
+  </div>
+</section>
+<!-- 60% DONE ✅ -->
+
+
+<!-- ===== How It Works Section (70%) ===== -->
+<section style="padding: 50px 20px; text-align: center;">
+  <h2 style="color: #93c5fd; margin-bottom: 30px;">📱 How It Works</h2>
+  <div style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px;">
+
+    <div style="background-color: #334155; padding: 20px; border-radius: 20px;">
+      <i class="fa fa-gamepad" style="font-size: 30px; color: #facc15;"></i>
+      <h3 style="margin-top: 15px; color: #93c5fd;">1️⃣ Choose Your Game / Service</h3>
+      <p>Select your favorite game or the digital product you want to top-up.</p>
+    </div>
+
+    <div style="background-color: #334155; padding: 20px; border-radius: 20px;">
+      <i class="fa fa-credit-card" style="font-size: 30px; color: #facc15;"></i>
+      <h3 style="margin-top: 15px; color: #93c5fd;">2️⃣ Make Secure Payment</h3>
+      <p>Pay securely using UPI, Google Pay, Paytm, Visa, Mastercard, or other options.</p>
+    </div>
+
+    <div style="background-color: #334155; padding: 20px; border-radius: 20px;">
+      <i class="fa fa-bolt" style="font-size: 30px; color: #facc15;"></i>
+      <h3 style="margin-top: 15px; color: #93c5fd;">3️⃣ Instant Top-Up Delivery</h3>
+      <p>Receive your game credits, UC, diamonds, or gift cards instantly after payment.</p>
+    </div>
+
+    <div style="background-color: #334155; padding: 20px; border-radius: 20px;">
+      <i class="fa fa-smile-o" style="font-size: 30px; color: #facc15;"></i>
+      <h3 style="margin-top: 15px; color: #93c5fd;">4️⃣ Enjoy Your Game!</h3>
+      <p>Power up your gaming experience and enjoy your purchase without any hassle.</p>
+    </div>
+
+  </div>
+</section>
+<!-- 70% DONE ✅ -->
+<!-- ===== Featured Offers / Flash Deals Section (75%) ===== -->
+<section style="padding: 50px 20px; text-align: center; background-color: #1e293b; border-top: 1px solid #334155; border-bottom: 1px solid #334155;">
+  <h2 style="color: #93c5fd; margin-bottom: 20px;">🎉 Featured Offers & Flash Deals</h2>
+  <p style="margin-bottom: 30px;">💥 Don't miss out! Limited-time offers to power up your gaming experience. Grab the best deals now!</p>
+
+  <!-- Offer Box -->
+  <div style="max-width: 800px; margin: 0 auto; background-color: #334155; border-radius: 20px; padding: 30px; box-shadow: 0 0 15px rgba(147, 197, 253, 0.3);">
+    <h3 style="color: #facc15; margin-bottom: 10px;">⚡ Get 10% Extra Diamonds on Your First Purchase!</h3>
+    <p style="margin-bottom: 20px;">Use code: <strong style="color: #93c5fd;">FIRST10</strong> at checkout.</p>
+    <a class="button" href="https://www.born2earngameshop.in/" target="_blank">Shop Now</a>
+  </div>
+</section>
+<!-- 75% DONE ✅ -->
+
+<!-- ===== Customer Reviews / Testimonials Section (80%) ===== -->
+<section style="padding: 50px 20px; text-align: center;">
+  <h2 style="color: #93c5fd; margin-bottom: 30px;">⭐ What Our Gamers Say</h2>
+  <div style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
+
+    <div style="background-color: #334155; padding: 20px; border-radius: 20px; text-align: left; box-shadow: 0 0 10px rgba(147, 197, 253, 0.2);">
+      <p style="font-style: italic; margin-bottom: 15px;">“Fast delivery and reliable service! Got my Free Fire diamonds in minutes. Highly recommended!”</p>
+      <p style="text-align: right; color: #facc15;"><strong>— Arjun Sharma</strong></p>
+    </div>
+
+    <div style="background-color: #334155; padding: 20px; border-radius: 20px; text-align: left; box-shadow: 0 0 10px rgba(147, 197, 253, 0.2);">
+      <p style="font-style: italic; margin-bottom: 15px;">“Excellent customer support! They helped me instantly when I had a payment issue. Great experience.”</p>
+      <p style="text-align: right; color: #facc15;"><strong>— Priya Mehta</strong></p>
+    </div>
+
+    <div style="background-color: #334155; padding: 20px; border-radius: 20px; text-align: left; box-shadow: 0 0 10px rgba(147, 197, 253, 0.2);">
+      <p style="font-style: italic; margin-bottom: 15px;">“The best place to top-up my BGMI UC — quick, secure, and easy! Love Born2Earn.”</p>
+      <p style="text-align: right; color: #facc15;"><strong>— Rohan Das</strong></p>
+    </div>
+
+  </div>
+</section>
+<!-- 80% DONE ✅ -->
+<!-- ===== Achievements / Milestones Section (85%) ===== -->
+<section style="padding: 50px 20px; text-align: center; background-color: #1e293b; border-top: 1px solid #334155; border-bottom: 1px solid #334155;">
+  <h2 style="color: #93c5fd; margin-bottom: 30px;">🏆 Our Journey So Far</h2>
+  <p style="margin-bottom: 40px;">Proudly serving gamers across India with fast and secure top-up solutions.</p>
+
+  <div style="max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px;">
+    <div style="background-color: #334155; padding: 20px; border-radius: 20px;">
+      <h3 style="color: #facc15; font-size: 2rem; margin-bottom: 10px;" class="counter" data-target="10000">0</h3>
+      <p style="color: #93c5fd;">Successful Top-Ups</p>
+    </div>
+    <div style="background-color: #334155; padding: 20px; border-radius: 20px;">
+      <h3 style="color: #facc15; font-size: 2rem; margin-bottom: 10px;" class="counter" data-target="5000">0</h3>
+      <p style="color: #93c5fd;">Happy Customers</p>
+    </div>
+    <div style="background-color: #334155; padding: 20px; border-radius: 20px;">
+      <h3 style="color: #facc15; font-size: 2rem; margin-bottom: 10px;" class="counter" data-target="2020">0</h3>
+      <p style="color: #93c5fd;">Serving Since</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Counter Animation Script ===== -->
+<script>
+  const counters = document.querySelectorAll('.counter');
+  counters.forEach(counter => {
+    counter.innerText = '0';
+    const updateCounter = () => {
+      const target = +counter.getAttribute('data-target');
+      const current = +counter.innerText;
+      const increment = target / 200;
+
+      if (current < target) {
+        counter.innerText = `${Math.ceil(current + increment)}`;
+        setTimeout(updateCounter, 10);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    updateCounter();
+  });
+</script>
+<!-- 85% DONE ✅ -->
+<!-- ===== Secure Payment Partners Section (90%) ===== -->
+<section style="padding: 50px 20px; text-align: center;">
+  <h2 style="color: #93c5fd; margin-bottom: 30px;">🛡️ Trusted Payment Partners</h2>
+  <p style="margin-bottom: 40px;">We partner with reliable and secure payment gateways to ensure your transactions are safe and smooth.</p>
+
+  <div style="max-width: 800px; margin: 0 auto; display: flex; justify-content: center; flex-wrap: wrap; gap: 30px;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png" alt="Visa" style="width: 100px; height: auto;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png" alt="Mastercard" style="width: 100px; height: auto;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/Paytm_logo.png" alt="Paytm" style="width: 100px; height: auto;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_Pay_Logo.svg" alt="Google Pay" style="width: 100px; height: auto;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/PhonePe-Logo.png" alt="PhonePe" style="width: 100px; height: auto;">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/Stripe_Logo%2C_revised_2016.svg" alt="Stripe" style="width: 100px; height: auto;">
+  </div>
+</section>
+<!-- 90% DONE ✅ -->
+
+
+
+
+<!-- ===== FAQ Section (95%) ===== -->
+<section style="padding: 50px 20px; text-align: center;">
+  <h2 style="color: #93c5fd; margin-bottom: 30px;">❓ Frequently Asked Questions (FAQ)</h2>
+  <div style="max-width: 900px; margin: 0 auto; text-align: left;">
+
+    <div style="background-color: #334155; padding: 20px; border-radius: 15px; margin-bottom: 15px;">
+      <h3 style="color: #facc15; margin-bottom: 10px;">💎 How fast is the delivery?</h3>
+      <p>Most of our top-up services are processed instantly after successful payment. In rare cases, it may take up to 5–10 minutes.</p>
+    </div>
+
+    <div style="background-color: #334155; padding: 20px; border-radius: 15px; margin-bottom: 15px;">
+      <h3 style="color: #facc15; margin-bottom: 10px;">💳 What payment methods do you accept?</h3>
+      <p>We accept UPI, Paytm, Google Pay, PhonePe, Visa, Mastercard, and Stripe payments.</p>
+    </div>
+
+    <div style="background-color: #334155; padding: 20px; border-radius: 15px; margin-bottom: 15px;">
+      <h3 style="color: #facc15; margin-bottom: 10px;">🔒 Is my data safe with Born2Earn?</h3>
+      <p>Absolutely! We use encrypted systems and secure payment gateways to keep your personal and payment information safe.</p>
+    </div>
+
+    <div style="background-color: #334155; padding: 20px; border-radius: 15px; margin-bottom: 15px;">
+      <h3 style="color: #facc15; margin-bottom: 10px;">♻️ What is your refund and cancellation policy?</h3>
+      <p>If your top-up is not delivered due to any issue on our end, we guarantee a full refund. Refund requests can be initiated through our support team.</p>
+    </div>
+
+  </div>
+</section>
+<!-- 95% DONE ✅ -->
+
+<!-- ===== Footer Section (100%) ===== -->
+<footer style="background-color: #1e293b; color: #93c5fd; text-align: center; padding: 40px 20px; margin-top: 60px;">
+  <div class="social-icons" style="margin-bottom: 20px;">
+    <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" style="font-size: 24px; margin: 10px; color: #93c5fd;"></i></a>
+    <a href="http://wa.me/+919933525757" target="_blank"><i class="fa fa-whatsapp" style="font-size: 24px; margin: 10px; color: #93c5fd;"></i></a>
+    <a href="https://www.instagram.com/born2earn_" target="_blank"><i class="fa fa-instagram" style="font-size: 24px; margin: 10px; color: #93c5fd;"></i></a>
+    <a href="https://youtube.com/@B2ERaaz" target="_blank"><i class="fa fa-youtube-play" style="font-size: 24px; margin: 10px; color: #93c5fd;"></i></a>
+    <a href="https://t.me/Born2EarnGame" target="_blank"><i class="fa fa-telegram" style="font-size: 24px; margin: 10px; color: #93c5fd;"></i></a>
+  </div>
+
+  <div class="footer-links" style="margin-bottom: 20px;">
+    <a href="/about" style="color: #93c5fd; margin: 0 10px; text-decoration: none;">About Us</a> |
+    <a href="/privacy" style="color: #93c5fd; margin: 0 10px; text-decoration: none;">Privacy Policy</a> |
+    <a href="/data-safety" style="color: #93c5fd; margin: 0 10px; text-decoration: none;">Data Safety</a> |
+    <a href="/refund-cancellation" style="color: #93c5fd; margin: 0 10px; text-decoration: none;">Refund & Cancellation</a>
+  </div>
+
+  <p style="margin-top: 10px;">© 2025 Born2Earn Game Shop. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
+<!-- 🎉 100% COMPLETE ✅ -->
+
+
+<style>
+/* ===== Born2Earn Game Shop Styles ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #0f172a;
+  color: #e2e8f0;
+  overflow-x: hidden;
+}
+/* Button Shimmer Effect */
+.button {
+  background: linear-gradient(135deg, #FFD700, #FFC300);
+  color: #0f172a;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 10px;
+  display: inline-block;
+  background-size: 200% 100%;
+  background-position: 0% 50%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: shimmer 3s infinite linear;
+}
+.button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+  background: linear-gradient(135deg, #FFC300, #FFD700);
+}
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+/* Marquee Scrolling Text */
+.marquee {
+  background-color: #1e293b;
+  color: #facc15;
+  padding: 10px;
+  font-weight: 600;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.marquee span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 12s linear infinite;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+/* Grid Item Hover */
+.grid-item:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+</style>
+
+
+
+<script>
+// ===== Counter Animation =====
+document.addEventListener('DOMContentLoaded', () => {
+  const counters = document.querySelectorAll('.counter');
+  counters.forEach(counter => {
+    counter.innerText = '0';
+    const updateCounter = () => {
+      const target = +counter.getAttribute('data-target');
+      const current = +counter.innerText;
+      const increment = target / 200;
+      if (current < target) {
+        counter.innerText = `${Math.ceil(current + increment)}`;
+        setTimeout(updateCounter, 10);
+      } else {
+        counter.innerText = target;
+      }
+    };
+    updateCounter();
+  });
+});
+
+// ===== Carousel Slide =====
+const carouselSlide = document.getElementById('carousel-slide');
+let counter = 0;
+const totalSlides = carouselSlide?.children.length || 0;
+
+function nextSlide() {
+  if (counter >= totalSlides - 1) counter = -1;
+  counter++;
+  updateCarousel();
+}
+
+function prevSlide() {
+  if (counter <= 0) counter = totalSlides;
+  counter--;
+  updateCarousel();
+}
+
+function updateCarousel() {
+  const slideWidth = carouselSlide.children[0].clientWidth;
+  carouselSlide.style.transform = `translateX(${-slideWidth * counter}px)`;
+}
+
+if (carouselSlide) {
+  setInterval(nextSlide, 4000); // Auto-slide every 4 seconds
+}
+</script>
