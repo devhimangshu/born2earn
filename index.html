@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GameTop Pro Mobile</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* ===== CLEANER COLOR PALETTE ===== */
+    :root {
+      --primary: #4361ee;  /* Vibrant blue */
+      --secondary: #3a0ca3; /* Deep purple */
+      --accent: #4cc9f0;   /* Light teal */
+      --light: #f8f9fa;    /* Off-white */
+      --dark: #212529;     /* Dark gray */
+      --card-bg: #ffffff;
+      --shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Comic Neue', cursive;
+      background: var(--light);
+      color: var(--dark);
+      font-size: 14px;
+      line-height: 1.4;
+      overflow-x: hidden;
+    }
+    
+    /* Header */
+    header {
+      padding: 1.2rem 1rem;
+      text-align: center;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      animation: fadeIn 0.8s ease-out;
+    }
+    
+    .logo {
+      width: 50px;
+      margin-bottom: 0.5rem;
+      border-radius: 10px;
+      border: 2px solid white;
+      box-shadow: var(--shadow);
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    
+    h1 {
+      font-size: 1.4rem;
+      margin-bottom: 0.3rem;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    }
+    
+    /* Buttons */
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.6rem;
+      margin-top: 0.8rem;
+    }
+    
+    .button {
+      padding: 0.6rem 1rem;
+      font-size: 0.75rem;
+      border-radius: 20px;
+      background: white;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+      border: none;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    .button:hover {
+      background: var(--accent);
+      color: white;
+    }
+    
+/* Animated Marquee */
+    .marquee {
+      padding: 0.5rem;
+      font-size: 0.7rem;
+      white-space: nowrap;
+      overflow: hidden;
+      background: var(--light);
+      border-top: 2px dashed #000;
+      border-bottom: 2px dashed #000;
+    }
+    
+    .marquee span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 15s linear infinite;
+    }
+    
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+    
+    /* Sections */
+    section {
+      padding: 1.5rem 1rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    @keyframes fadeInUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 1.2rem;
+    }
+    
+    .section-header h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.3rem;
+      color: var(--secondary);
+      display: inline-block;
+      padding-bottom: 0.3rem;
+      border-bottom: 2px solid var(--accent);
+    }
+    
+    /* Cards */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    
+    .card {
+      background: var(--card-bg);
+      padding: 1rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    
+    .card img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin-bottom: 0.8rem;
+    }
+    
+    .card h3 {
+      font-size: 0.9rem;
+      margin-bottom: 0.4rem;
+      color: var(--secondary);
+    }
+    
+    .card p {
+      font-size: 0.8rem;
+      color: var(--dark);
+    }
+    
+    /* Carousel */
+    .carousel-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      margin: 0.8rem 0;
+      border-radius: 10px;
+      box-shadow: var(--shadow);
+    }
+    
+    .carousel-slide {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    
+    .carousel-slide img {
+      min-width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+    
+    .carousel-nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 0.5rem;
+    }
+    
+    .carousel-btn {
+      background: rgba(255,255,255,0.8);
+      border: none;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      cursor: pointer;
+      box-shadow: var(--shadow);
+      color: var(--secondary);
+    }
+    
+    /* Footer */
+    footer {
+      padding: 1.5rem 1rem;
+      background: var(--dark);
+      color: white;
+      font-size: 0.7rem; /* Smaller text */
+    }
+    
+    .footer-content {
+      max-width: 800px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .footer-links {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.8rem;
+    }
+    
+    .footer-links a {
+      color: white;
+      text-decoration: none; /* Removed underline */
+      transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+    
+    .footer-column h3 {
+      font-size: 0.9rem;
+      margin-bottom: 0.8rem;
+      color: var(--accent);
+    }
+    
+    .contact-info p {
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .copyright {
+      text-align: center;
+      margin-top: 1.5rem;
+      padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.7);
+    }
+    
+    /* Responsive */
+    @media (min-width: 480px) {
+      .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (min-width: 768px) {
+      .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      
+      .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- Header -->
+<header>
+  <img src="logo.png" alt="GameTop Logo" class="logo">
+  <h1>GameTop Pro</h1>
+  <p>Instant game top-ups</p>
+  <div class="button-group">
+    <a class="button" href="#"><i class="fas fa-store"></i> Store</a>
+    <a class="button" href="#"><i class="fas fa-download"></i> Download</a>
+    <a class="button" href="#"><i class="fab fa-google-play"></i> Play Store</a>
+  </div>
+</header>
+
+<!-- Marquee -->
+<div class="marquee">
+  <span>⚡ Instant Delivery | Best Prices | 24/7 Support | Download Now ⚡</span>
+</div>
+
+<!-- Carousel -->
+<section>
+  <div class="section-header">
+    <h2>Trending Games</h2>
+  </div>
+  <div class="carousel-container">
+    <div class="carousel-slide" id="carousel-slide">
+      <img src="https://dl.dir.freefiremobile.com/common/web_event/hash/54f31449f5f91cf0cc223cc635cd5952jpg" alt="Free Fire">
+      <img src="game2.jpg" alt="BGMI">
+      <img src="game3.jpg" alt="COD Mobile">
+    </div>
+    <div class="carousel-nav">
+      <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+      <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section>
+  <div class="section-header">
+    <h2>Top-Up Services</h2>
+  </div>
+  <div class="card-grid">
+    <div class="card">
+      <img src="ff-icon.png" alt="Free Fire">
+      <h3>Free Fire Diamonds</h3>
+      <p>From ₹10 - Instant delivery</p>
+    </div>
+    <div class="card">
+      <img src="bgmi-icon.png" alt="BGMI">
+      <h3>BGMI UC</h3>
+      <p>From ₹20 - 2 minute delivery</p>
+    </div>
+    <div class="card">
+      <img src="cod-icon.png" alt="COD">
+      <h3>COD Points</h3>
+      <p>From ₹30 - Email delivery</p>
+    </div>
+  </div>
+</section>
+
+<!-- Benefits -->
+<section>
+  <div class="section-header">
+    <h2>Why Choose Us?</h2>
+  </div>
+  <div class="card-grid">
+    <div class="card">
+      <i class="fas fa-bolt" style="color: var(--accent); font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+      <h3>Fast Delivery</h3>
+      <p>90% within 2 minutes</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-shield-alt" style="color: var(--accent); font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+      <h3>100% Secure</h3>
+      <p>Encrypted payments</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-rupee-sign" style="color: var(--accent); font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+      <h3>Best Prices</h3>
+      <p>Lowest price guarantee</p>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section>
+  <div class="section-header">
+    <h2>How It Works</h2>
+  </div>
+  <div class="card-grid">
+    <div class="card">
+      <i class="fas fa-gamepad" style="color: var(--accent); font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+      <h3>1. Select Game</h3>
+      <p>Choose your favorite game</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-credit-card" style="color: var(--accent); font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+      <h3>2. Make Payment</h3>
+      <p>Secure payment methods</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-gift" style="color: var(--accent); font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+      <h3>3. Get Items</h3>
+      <p>Instant in-game delivery</p>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section>
+  <div class="section-header">
+    <h2>Player Reviews</h2>
+  </div>
+  <div class="card-grid">
+    <div class="card">
+      <p>"Got my Free Fire diamonds in 1 minute! Best service ever."</p>
+      <p style="font-weight: bold; color: var(--accent); margin-top: 0.5rem;">— Rahul, Mumbai</p>
+    </div>
+    <div class="card">
+      <p>"24/7 support helped me at 3AM. Amazing!"</p>
+      <p style="font-weight: bold; color: var(--accent); margin-top: 0.5rem;">— Priya, Delhi</p>
+    </div>
+  </div>
+</section>
+
+<!-- Milestones -->
+<section>
+  <div class="section-header">
+    <h2>Our Stats</h2>
+  </div>
+  <div class="card-grid">
+    <div class="card">
+      <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary);">25K+</div>
+      <p>Transactions</p>
+    </div>
+    <div class="card">
+      <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary);">98%</div>
+      <p>Success Rate</p>
+    </div>
+    <div class="card">
+      <div style="font-size: 1.5rem; font-weight: bold; color: var(--primary);">2021</div>
+      <p>Serving Since</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <div class="footer-links">
+        <a href="#">Home</a>
+        <a href="#">Games</a>
+        <a href="#">Top-Up</a>
+        <a href="#">Top-Up</a>
+      </div>
+    </div>
+    
+    
+    
+    <div class="footer-column">
+      <h3>Contact Info</h3>
+      <div class="contact-info">
+        <p><i class="fas fa-envelope"></i> support@gametop.com</p>
+        <p><i class="fas fa-phone"></i> +91 9876543210</p>
+        <p><i class="fas fa-map-marker-alt"></i> Mumbai, India</p>
+        
+      </div>
+    </div>
+    
+  </div>
+  
+  <div class="copyright">
+    <p>© 2023 GameTop Pro. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Carousel Functionality
+  const slide = document.getElementById('carousel-slide');
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
+  let counter = 0;
+  const size = 100; // 100% per slide
+  
+  function updateCarousel() {
+    slide.style.transform = `translateX(${-size * counter}%)`;
+  }
+  
+  nextBtn.addEventListener('click', () => {
+    if (counter >= 2) counter = -1;
+    counter++;
+    updateCarousel();
+  });
+  
+  prevBtn.addEventListener('click', () => {
+    if (counter <= 0) counter = 3;
+    counter--;
+    updateCarousel();
+  });
+  
+  // Auto-rotate carousel
+  setInterval(() => {
+    if (counter >= 2) counter = -1;
+    counter++;
+    updateCarousel();
+  }, 4000);
+  
+  // Animate counters when visible
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounters();
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {threshold: 0.5});
+  
+  observer.observe(document.querySelector('section:nth-last-child(2)'));
+  
+  function animateCounters() {
+    const counters = [
+      { element: document.querySelector('div.card:nth-child(1) div'), target: 25000 },
+      { element: document.querySelector('div.card:nth-child(2) div'), target: 98 },
+      { element: document.querySelector('div.card:nth-child(3) div'), target: 2021 }
+    ];
+    
+    const duration = 2000; // 2 seconds
+    const steps = 100;
+    const stepTime = duration / steps;
+    
+    counters.forEach(counter => {
+      let current = 0;
+      const increment = counter.target / steps;
+      const timer = setInterval(() => {
+        current += increment;
+        if (current >= counter.target) {
+          clearInterval(timer);
+          counter.element.textContent = counter.target + (counter.target === 98 ? '%' : (counter.target === 2021 ? '' : '+'));
+        } else {
+          counter.element.textContent = Math.floor(current) + (counter.target === 98 ? '%' : (counter.target === 2021 ? '' : '+'));
+        }
+      }, stepTime);
+    });
+  }
+</script>
+</body>
+</html>
+
