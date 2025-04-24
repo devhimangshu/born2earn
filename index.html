@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Born2Earn - Game Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #01ca12;
+      --secondary: #fffb10;
+      --accent: #000000;
+      --dark: #0400ff;
+      --card-bg: #fbfbfb;
+      --border-color: #ff0000;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Comic Neue', cursive;
+      background: linear-gradient(to bottom, #a6ff83, #81ffa9);
+      color: var(--dark);
+      font-size: 14px;
+      line-height: 1.4;
+      overflow-x: hidden;
+    }
+    
+    /* Header */
+    header {
+      padding: 1rem;
+      text-align: center;
+      background: linear-gradient(135deg, #beb2f5, #fcd34d);
+      border-bottom: 4px solid transparent;
+      animation: fadeIn 0.8s ease-out;
+    }
+    
+    .logo {
+      width: 90px;
+      margin-bottom: 0.5rem;
+      border-radius: 8px;
+      border: 2px solid transparent;
+      box-shadow: 2px 2px 0 #000000;
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+    
+    h1 {
+      font-size: 1.3rem;
+      margin-bottom: 0.3rem;
+      background: linear-gradient(90deg, #1eff00, #8e00f4, #d0ff00);
+      background-size: 300% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 3s infinite linear;
+    }
+    
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+    
+    /* Buttons */
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+    }
+    
+    .button {
+      padding: 0.5rem 0.8rem;
+      font-size: 0.7rem;
+      border-radius: 6px;
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      border: 2px dashed #ffaa00;
+      box-shadow: 2px 2px 0 #000;
+      transition: all 0.3s ease;
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    .button:hover {
+      background: var(--accent);
+      transform: translateY(-2px);
+    }
+    
+    /* Marquee */
+    .marquee {
+      padding: 0.5rem;
+      font-size: 0.7rem;
+      white-space: nowrap;
+      overflow: hidden;
+      background: var(--secondary);
+      border-top: 2px dashed #000000;
+      border-bottom: 2px dashed #000000;
+    }
+    
+    .marquee span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 15s linear infinite;
+    }
+    
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
+    
+    /* Sections */
+    section {
+      padding: 1.5rem 1rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 0.8s forwards;
+    }
+    
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    section:nth-child(1) { animation-delay: 0.2s; }
+    section:nth-child(2) { animation-delay: 0.4s; }
+    section:nth-child(3) { animation-delay: 0.6s; }
+    section:nth-child(4) { animation-delay: 0.8s; }
+    section:nth-child(5) { animation-delay: 1.0s; }
+    section:nth-child(6) { animation-delay: 1.2s; }
+    section:nth-child(7) { animation-delay: 1.4s; }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    
+    .section-header h2 {
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+      display: inline-block;
+      border-bottom: 2px dotted var(--border-color);
+      padding-bottom: 0.2rem;
+    }
+    
+    /* Cards */
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.8rem;
+    }
+    
+    .card {
+      background: var(--card-bg);
+      padding: 0.8rem;
+      border-radius: 8px;
+      text-align: center;
+      border: 2px dotted var(--border-color);
+      box-shadow: 2px 2px 0 var(--dark);
+      transition: all 0.3s ease;
+      animation: zoomIn 0.6s both;
+    }
+    
+    @keyframes zoomIn {
+      from { transform: scale(0.9); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+    
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 3px 3px 0 #000000;
+    }
+    
+    .card img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin-bottom: 0.5rem;
+    }
+    
+    .card h3 {
+      font-size: 0.9rem;
+      margin-bottom: 0.3rem;
+    }
+    
+    .card p {
+      font-size: 0.8rem;
+    }
+    
+    /* Carousel */
+    .carousel-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      margin: 0.5rem 0;
+      border-radius: 8px;
+      border: 2px solid #000;
+      box-shadow: 2px 2px 0 #000;
+    }
+    
+    .carousel-slide {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+    
+    .carousel-slide img {
+      min-width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    
+    .carousel-nav {
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 0.5rem;
+    }
+    
+    .carousel-btn {
+      background: rgba(255,255,255,0.7);
+      border: none;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      cursor: pointer;
+      box-shadow: 1px 1px 0 #000;
+    }
+    
+    /* Testimonials */
+    .testimonial-card {
+      position: relative;
+    }
+    
+    .testimonial-card:before {
+      content: """;
+      font-size: 3rem;
+      color: rgba(0,0,0,0.1);
+      position: absolute;
+      top: -10px;
+      left: 5px;
+    }
+    
+    .testimonial-author {
+      font-weight: bold;
+      color: #1e40af;
+      font-size: 0.8rem;
+    }
+    
+    /* Milestones */
+    .milestone-number {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #1e40af;
+      margin-bottom: 0.2rem;
+    }
+    
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, #bbf7d0, #c4b5fd);
+      padding: 1.5rem 1rem;
+      border-top: 3px double #000;
+      text-align: center;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .footer-column {
+      margin-bottom: 1rem;
+    }
+
+    .footer-column h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: #000000;
+      border-bottom: 2px dotted #000;
+      display: inline-block;
+      padding-bottom: 0.3rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .footer-links a {
+      color: var(--dark);
+      font-size: 0.8rem;
+      transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+      color: #9000ff;
+    }
+
+    .contact-info p {
+      margin: 0.3rem 0;
+      font-size: 0.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 0.8rem;
+      margin: 1rem 0;
+    }
+
+    .social-link {
+      width: 32px;
+      height: 32px;
+      background: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 2px 2px 0 #000;
+      transition: all 0.3s ease;
+    }
+
+    .social-link:hover {
+      transform: translateY(-3px);
+      background: var(--accent);
+      color: white;
+    }
+
+    .copyright {
+      font-size: 0.7rem;
+      margin-top: 1rem;
+      padding-top: 1rem;
+      border-top: 2px dashed #000;
+    }
+
+    @media (min-width: 600px) {
+      .footer-content {
+        grid-template-columns: repeat(3, 1fr);
+        text-align: left;
+      }
+
+      .footer-links {
+        align-items: flex-start;
+      }
+
+      .contact-info p {
+        justify-content: flex-start;
+      }
+
+      .footer-column h3 {
+        font-size: 1.1rem;
+      }
+      
+      .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 900px) {
+      .card-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  </style>
+</head>
+<body>
+<!-- Header -->
+<header>
+  <img src="https://html-generator.com/uploads/images/2023/12/27/90407_FP4TLZBEJ.png" alt="Born2Earn Logo" class="logo">
+  <h1 class="shimmer">Born2Earn Game Shop</h1>
+  <p>Trusted platform for all your gaming top-ups and gift cards!</p>
+  <div class="button-group">
+    <a class="button" href="https://born2earn-game-shop.store.shoopy.in/"><i class="fas fa-store"></i> Store</a>
+    <a class="button" href="https://storage.appilix.com/uploads/app-apk-680a9351e4685-1745523537.apk" download="Born2Earn Apk"><i class="fas fa-download"></i> Download</a>
+    <a class="button" href="https://play.google.com/store/apps/details?id=com.btoegameshop.app"><i class="fab fa-google-play"></i> Play Store</a>
+  </div>
+</header>
+
+<!-- Marquee -->
+<div class="marquee">
+  <span>⚡ Instant Delivery | Best Prices | 24/7 Support | Download Now ⚡</span>
+</div>
+
+<!-- Carousel -->
+<section>
+  <div class="section-header">
+    <h2>🔥 Trending Games</h2>
+  </div>
+  <div class="carousel-container">
+    <div class="carousel-slide" id="carousel-slide">
+      <img src="https://cdn1.codashop.com/S/content/common/images/mno/FreeFire_productpage-banner-UK%20(1).jpg" alt="Free Fire">
+      <img src="https://html-generator.com/uploads/images/2025/04/24/93833V179JVNSXQ.jpg" alt="BGMI">
+      <img src="https://cdn1.codashop.com/S/content/common/images/mno/Banner-CODM-640x241.jpg" alt="COD Mobile">
+    </div>
+    <div class="carousel-nav">
+      <button class="carousel-btn prev"><i class="fas fa-chevron-left"></i></button>
+      <button class="carousel-btn next"><i class="fas fa-chevron-right"></i></button>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section>
+  <div class="section-header">
+    <h2>💎 Top-Up Services</h2>
+  </div>
+  <div class="card-grid">
+    <div class="card">
+      <img src="https://cdn1.codashop.com/S/content/common/images/denom-image/FreeFire/Freefire_diamonds.png" alt="Free Fire">
+      <h3>Free Fire Diamonds</h3>
+      <p>Instant top-up of Free Fire Diamonds at best price no login needed safe and fast delivery</p>
+    </div>
+    
+    <div class="card">
+      <img src="https://cdn1.codashop.com/S/content/common/images/denom-image/PUBG/325_PUBG_UC.png" alt="BGMI">
+      <h3>BGMI UC</h3>
+      <p>Buy BGMI UC online in seconds secure recharge with trusted seller and instant UC delivery</p>
+    </div>
+    
+    <div class="card">
+      <img src="https://cdn1.codashop.com/S/content/common/images/denom-image/CODM/100x100/CallofDuty_CP.png" alt="COD">
+      <h3>COD Points</h3>
+      <p>Top-up Call of Duty CP fast and secure no login required supports all CODM player IDs</p>
+    </div>
+  </div>
+</section>
+
+<!-- Benefits -->
+<section>
+  <div class="section-header">
+    <h2>🌟 Why Choose Us?</h2>
+  </div>
+  <div class="card-grid">
+    <div class="card">
+      <i class="fas fa-bolt"></i>
+      <h3>Fast Delivery</h3>
+      <p>Get your game credits delivered instantly in under 2 minutes</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-shield-alt"></i>
+      <h3>100% Secure</h3>
+      <p>All transactions are encrypted for complete safety</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-rupee-sign"></i>
+      <h3>Best Prices</h3>
+      <p>We offer unbeatable rates on every top-up and service</p>
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section>
+  <div class="section-header">
+    <h2>📱 How It Works</h2>
+  </div>
+  <div class="card-grid">
+    <div class="card">
+      <i class="fas fa-gamepad"></i>
+      <h3>1. Select Game</h3>
+      <p>Pick the game you want to top up</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-credit-card"></i>
+      <h3>2. Make Payment</h3>
+      <p>Pay using safe and verified options</p>
+    </div>
+    <div class="card">
+      <i class="fas fa-gift"></i>
+      <h3>3. Get Items</h3>
+      <p>Your credits arrive in seconds no login needed</p>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section>
+  <div class="section-header">
+    <h2>⭐ Player Reviews</h2>
+  </div>
+  <div class="card-grid">
+    <div class="card testimonial-card">
+      <p>"Got my Free Fire Diamonds in under a minute fast and reliable every time"</p>
+      <p class="testimonial-author">— Rahul, Mumbai</p>
+    </div>
+    <div class="card testimonial-card">
+      <p>"Support team replied instantly even at 3AM super helpful and quick"</p>
+      <p class="testimonial-author">— Priya, Delhi</p>
+    </div>
+  </div>
+</section>
+
+<!-- Milestones -->
+<section>
+  <div class="section-header">
+    <h2>🏆 Our Stats</h2>
+  </div>
+  <div class="card-grid">
+    <div class="card">
+      <div class="milestone-number">200K+</div>
+      <p>Successful game top-up transactions</p>
+    </div>
+    <div class="card">
+      <div class="milestone-number">98%</div>
+      <p>Customer satisfaction and order success rate</p>
+    </div>
+    <div class="card">
+      <div class="milestone-number">2021</div>
+      <p>Trusted by players since our launch</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-content">
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <div class="footer-links">
+        <a href="privacy">Privacy Policy</a>
+        <a href="data-safety">Data Safety</a>
+        <a href="refund-cancellation">Refund & Cancellation</a>
+      </div>
+    </div>
+
+    <div class="footer-column">
+      <h3>Contact Us</h3>
+      <div class="contact-info">
+        <p><i class="fas fa-phone"></i> +91 95476 71067</p>
+        <p><i class="fas fa-envelope"></i> born2earn1995@gmail.com</p>
+      </div>
+    </div>
+
+    <div class="footer-column">
+      <h3>Follow Us</h3>
+      <div class="social-links">
+        <a href="#" class="social-link" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="social-link" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+        <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <div class="copyright">
+    <p>© <span id="current-year">2025</span> Born2Earn Game Shop. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Carousel Functionality
+  const slide = document.getElementById('carousel-slide');
+  const prevBtn = document.querySelector('.prev');
+  const nextBtn = document.querySelector('.next');
+  let counter = 0;
+  const size = 100; // 100% per slide
+  
+  function updateCarousel() {
+    slide.style.transform = `translateX(${-size * counter}%)`;
+  }
+  
+  nextBtn.addEventListener('click', () => {
+    if (counter >= 2) counter = -1;
+    counter++;
+    updateCarousel();
+  });
+  
+  prevBtn.addEventListener('click', () => {
+    if (counter <= 0) counter = 3;
+    counter--;
+    updateCarousel();
+  });
+  
+  // Auto-rotate carousel
+  setInterval(() => {
+    if (counter >= 2) counter = -1;
+    counter++;
+    updateCarousel();
+  }, 4000);
+  
+  // Animate counters
+  function animateCounters() {
+    const counters = document.querySelectorAll('.milestone-number');
+    const speed = 200;
+    
+    counters.forEach(counter => {
+      const target = +counter.innerText.replace(/\D/g,'');
+      const count = +counter.innerText.replace(/\D/g,'');
+      const increment = target / speed;
+      
+      if (count < target) {
+        counter.innerText = Math.ceil(count + increment);
+        setTimeout(animateCounters, 1);
+      } else {
+        counter.innerText = target;
+      }
+    });
+  }
+  
+  // Trigger counters when milestones section is visible
+  const observer = new IntersectionObserver((entries) => {
+    if (entries[0].isIntersecting) {
+      animateCounters();
+    }
+  }, {threshold: 0.5});
+  
+  observer.observe(document.querySelector('section:nth-last-child(2)'));
+  
+  // Auto-update copyright year
+  document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
