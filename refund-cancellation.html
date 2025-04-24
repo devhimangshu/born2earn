@@ -1,145 +1,214 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Refund & Cancellation Policy | Born2Earn Game Shop</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #0f172a;
-    color: #e2e8f0;
-    overflow-x: hidden;
-  }
-  header {
-    background: linear-gradient(135deg, #6366f1, #8b5cf6);
-    padding: 50px 20px;
-    text-align: center;
-    color: white;
-    border-bottom-left-radius: 50px;
-    border-bottom-right-radius: 50px;
-  }
-  .shimmer {
-    font-size: 2.8rem;
-    font-weight: 700;
-    background: linear-gradient(90deg, #ffffff, #93c5fd, #ffffff);
-    background-size: 200% 100%;
-    animation: shimmer 3s infinite linear;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  @keyframes shimmer {
-    0% { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
-  }
-  .marquee {
-    background-color: #1e293b;
-    color: #facc15;
-    padding: 10px;
-    font-weight: 600;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-  .marquee span {
-    display: inline-block;
-    padding-left: 100%;
-    animation: marquee 12s linear infinite;
-  }
-  @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-100%); }
-  }
-  .container {
-    max-width: 900px;
-    margin: 50px auto;
-    padding: 30px;
-    background-color: #1e293b;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
-    animation: fadeIn 2s ease-in-out;
-  }
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  h2 {
-    color: #93c5fd;
-    margin-top: 30px;
-    margin-bottom: 15px;
-    font-size: 1.8rem;
-  }
-  p, li {
-    line-height: 1.7;
-  }
-  ul { margin-left: 20px; }
-  footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #1e293b;
-    color: #93c5fd;
-    border-top: 1px solid #334155;
-    margin-top: 50px;
-    animation: fadeIn 2s ease-in-out;
-  }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Refund Policy - Born2Earn Game Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #01ca12;
+      --secondary: #fffb10;
+      --accent: #000000;
+      --text: #333;
+      --bg: linear-gradient(to bottom, #a6ff83, #81ffa9);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Comic Neue', cursive;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      font-size: 15px;
+    }
+    
+    header {
+      padding: 1.5rem 1rem;
+      text-align: center;
+      background: linear-gradient(135deg, #beb2f5, #fcd34d);
+    }
+    
+    header img {
+      width: 80px;
+      border-radius: 8px;
+      margin-bottom: 0.5rem;
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    h1 {
+      font-size: 1.3rem;
+      background: linear-gradient(90deg, #1eff00, #8e00f4, #d0ff00);
+      background-size: 300% 100%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shimmer 3s infinite linear;
+    }
+    
+    .marquee-container {
+      width: 100%;
+      overflow: hidden;
+      white-space: nowrap;
+      background: var(--secondary);
+      border-top: 2px dashed #000;
+      border-bottom: 2px dashed #000;
+      padding: 0.7rem 0;
+    }
+    
+    .marquee-content {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 15s linear infinite;
+      font-size: 0.85rem;
+    }
+    
+    .container {
+      padding: 0 1rem;
+      max-width: 100%;
+    }
+    
+    h2 {
+      color: #facc15;
+      text-align: center;
+      margin: 1.5rem 0;
+      font-size: 1.2rem;
+    }
+    
+    .policy-section {
+      background: white;
+      padding: 1.2rem;
+      border-radius: 8px;
+      margin: 1rem 0;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    
+    h3 {
+      color: #93c5fd;
+      margin-bottom: 0.8rem;
+    }
+    
+    p, li {
+      margin-bottom: 0.8rem;
+      font-size: 0.95rem;
+    }
+    
+    ul {
+      margin-left: 1.2rem;
+    }
+    
+    .notice-box {
+      background: #f8d7da;
+      border-left: 4px solid #dc3545;
+      padding: 1rem;
+      margin: 1.5rem 0;
+      border-radius: 0 4px 4px 0;
+    }
+    
+    .process-steps {
+      counter-reset: step;
+    }
+    
+    .step {
+      position: relative;
+      padding-left: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .step:before {
+      counter-increment: step;
+      content: counter(step);
+      position: absolute;
+      left: 0;
+      background: var(--primary);
+      color: white;
+      width: 1.8rem;
+      height: 1.8rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+    
+    footer {
+      background: linear-gradient(135deg, #bbf7d0, #c4b5fd);
+      padding: 1.2rem;
+      text-align: center;
+      font-size: 0.85rem;
+      border-top: 2px dashed #000;
+      margin-top: 2rem;
+    }
+  </style>
 </head>
 <body>
-
-<!-- ====== HEADER ====== -->
 <header>
+  <img src="https://play-lh.googleusercontent.com/9DqI-7OD7e_66ul85JsxQRYE10uVZXN44JRG72sU1H76ZPZVbMx-SdaQqbO25bPCaA=w240-h480-rw" alt="Born2Earn Logo">
   <h1 class="shimmer">Refund & Cancellation Policy</h1>
-  <p>Your satisfaction is important to us at <span style="color:#facc15; font-weight:600;">Born2Earn Game Shop</span>.</p>
 </header>
 
-<!-- ====== SCROLLING MARQUEE ====== -->
-<div class="marquee">
-  <span>⚡ Fast Top-ups ⚡ Transparent Refund Policy ⚡ Born2Earn Game Shop ⚡ Contact Us for Any Support ⚡</span>
+<div class="marquee-container">
+  <div class="marquee-content">
+    ⚡ Instant Refunds for Eligible Cases ⚡ Easy Cancellations ⚡ 24/7 Support ⚡ Contact +919547671066 ⚡
+  </div>
 </div>
 
-<!-- ====== POLICY CONTENT ====== -->
 <div class="container">
-  <h2>🛡️ General Policy</h2>
-  <p>At <span style="color:#facc15; font-weight:600;">Born2Earn Game Shop</span>, we work hard to deliver your purchased game credits, top-ups, or digital goods as quickly and accurately as possible. Due to the nature of digital products and services, we have specific guidelines for refunds and cancellations.</p>
+  <div class="policy-section">
+    <h2>Refund Policy</h2>
+    <div class="notice-box">
+      <h3>Important Notice</h3>
+      <p>Digital game top-ups are typically non-refundable once processed. Exceptions apply only for:</p>
+      <ul>
+        <li>• Failed transactions (payment taken but no delivery)</li>
+        <li>• Duplicate payments</li>
+        <li>• Technical errors from our system</li>
+      </ul>
+    </div>
+    
+    <h3>Refund Process:</h3>
+    <div class="process-steps">
+      <div class="step">Contact support within 24 hours with transaction proof</div>
+      <div class="step">Provide screenshots of payment and issue</div>
+      <div class="step">Verification by our team (3 business days)</div>
+      <div class="step">Refund processing (5-7 business days if approved)</div>
+    </div>
+  </div>
 
-  <h2>💸 Refund Policy</h2>
-  <ul>
-    <li>✅ Refunds are only applicable if the purchased top-up has not been delivered within <strong>24 hours</strong> of successful payment (excluding technical issues from the game provider's side).</li>
-    <li>✅ Refunds will not be provided for incorrect user IDs, account details, or wrong information shared by the buyer.</li>
-    <li>✅ Once the top-up, UC, diamonds, or credits are delivered to the game account, the transaction is considered complete and non-refundable.</li>
-    <li>✅ Any double payment due to system error will be refunded after verification.</li>
-  </ul>
+  <div class="policy-section">
+    <h2>Cancellation Policy</h2>
+    <p>You may cancel orders only before processing begins:</p>
+    <ul>
+      <li>⏱️ Must request within 15 minutes of payment</li>
+      <li>📞 Immediate cancellation via customer support</li>
+      <li>💸 Refunds processed within 24 hours for cancellations</li>
+    </ul>
+    
+    <div class="notice-box">
+      <h3>Payment Account Restriction</h3>
+      <p>For security, only use your own payment methods. Third-party accounts are prohibited.</p>
+      <p><strong>हिंदी:</strong> केवल अपने खाते का उपयोग करें। अन्य खातों पर प्रतिबंध है।</p>
+      <p><strong>বাংলা:</strong> শুধুমাত্র আপনার নিজের অ্যাকাউন্ট ব্যবহার করুন। তৃতীয় পক্ষের অ্যাকাউন্ট নিষিদ্ধ।</p>
+    </div>
+  </div>
 
-  <h2>🚫 Cancellation Policy</h2>
-  <ul>
-    <li>❌ Orders cannot be canceled once they are successfully placed and payment is processed.</li>
-    <li>❌ Cancellation is only allowed if the request is made <strong>before</strong> we start processing your order.</li>
-    <li>❌ Please make sure to double-check your Game ID / User ID before placing the order.</li>
-  </ul>
-
-  <h2>⚠️ Exceptions & Disclaimers</h2>
-  <ul>
-    <li>⚡ No refunds for reasons like change of mind, accidental purchase, or non-usage of the purchased credits.</li>
-    <li>⚡ We are not responsible for issues caused by incorrect game IDs or restrictions from the game service providers.</li>
-    <li>⚡ Any dispute regarding transaction failures will be handled in coordination with our payment gateway partners.</li>
-  </ul>
-
-  <h2>📞 How to Request a Refund or Raise an Issue?</h2>
-  <p>To request a refund (if eligible) or to report any issue with your order, please contact us directly through:</p>
-  <ul>
-    <li>📧 Email: <a href="mailto:born2earn1995@gmail.com" style="color:#93c5fd;">born2earn1995@gmail.com</a></li>
-    <li>📱 WhatsApp Support: <a href="https://wa.me/919547671067" target="_blank" style="color:#93c5fd;">+91 95476 71067</a></li>
-    <li>⏱️ Response Time: 24 to 48 hours (excluding weekends and public holidays)</li>
-  </ul>
-
-  <p>We appreciate your understanding and support! ⚡</p>
+  <div class="policy-section">
+    <h2>Contact Support</h2>
+    <p>For refund/cancellation requests:</p>
+    <p><strong>WhatsApp:</strong> +919547671066</p>
+    <p><strong>Call:</strong> +919547671067</p>
+    <p><strong>Email:</strong> support@born2earn.com</p>
+    <p>Available 24 hours, 7 days a week</p>
+  </div>
 </div>
 
-<!-- ====== FOOTER ====== -->
 <footer>
   <p>© 2025 Born2Earn Game Shop. All rights reserved.</p>
+  <p>Last Updated: June 2024</p>
 </footer>
-
 </body>
 </html>
