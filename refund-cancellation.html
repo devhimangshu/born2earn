@@ -1,214 +1,143 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Refund Policy - Born2Earn Game Shop</title>
-  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Refund & Cancellation Policy | Born2Earn</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <style>
-    :root {
-      --primary: #01ca12;
-      --secondary: #fffb10;
-      --accent: #000000;
-      --text: #333;
-      --bg: linear-gradient(to bottom, #a6ff83, #81ffa9);
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
     }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
     }
-    
-    body {
-      font-family: 'Comic Neue', cursive;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-      font-size: 15px;
-    }
-    
-    header {
-      padding: 1.5rem 1rem;
-      text-align: center;
-      background: linear-gradient(135deg, #beb2f5, #fcd34d);
-    }
-    
-    header img {
-      width: 80px;
-      border-radius: 8px;
-      margin-bottom: 0.5rem;
-      animation: float 3s ease-in-out infinite;
-    }
-    
-    h1 {
-      font-size: 1.3rem;
-      background: linear-gradient(90deg, #1eff00, #8e00f4, #d0ff00);
-      background-size: 300% 100%;
+    .shimmer {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 2.5rem;
+      background: linear-gradient(90deg, #ffffff, #93c5fd, #ffffff);
+      background-size: 200% 100%;
+      animation: shimmer 3s infinite linear;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: shimmer 3s infinite linear;
     }
-    
-    .marquee-container {
-      width: 100%;
+    .marquee {
+      background-color: #1e293b;
+      color: #facc15;
+      padding: 10px;
+      font-weight: 600;
       overflow: hidden;
       white-space: nowrap;
-      background: var(--secondary);
-      border-top: 2px dashed #000;
-      border-bottom: 2px dashed #000;
-      padding: 0.7rem 0;
     }
-    
-    .marquee-content {
+    .marquee span {
       display: inline-block;
       padding-left: 100%;
-      animation: marquee 15s linear infinite;
-      font-size: 0.85rem;
+      animation: marquee 12s linear infinite;
     }
-    
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
     .container {
-      padding: 0 1rem;
-      max-width: 100%;
-    }
-    
-    h2 {
-      color: #facc15;
-      text-align: center;
-      margin: 1.5rem 0;
-      font-size: 1.2rem;
-    }
-    
-    .policy-section {
-      background: white;
-      padding: 1.2rem;
-      border-radius: 8px;
-      margin: 1rem 0;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    
-    h3 {
-      color: #93c5fd;
-      margin-bottom: 0.8rem;
-    }
-    
-    p, li {
-      margin-bottom: 0.8rem;
-      font-size: 0.95rem;
-    }
-    
-    ul {
-      margin-left: 1.2rem;
-    }
-    
-    .notice-box {
-      background: #f8d7da;
-      border-left: 4px solid #dc3545;
-      padding: 1rem;
-      margin: 1.5rem 0;
-      border-radius: 0 4px 4px 0;
-    }
-    
-    .process-steps {
-      counter-reset: step;
-    }
-    
-    .step {
-      position: relative;
-      padding-left: 2.5rem;
-      margin-bottom: 1rem;
-    }
-    
-    .step:before {
-      counter-increment: step;
-      content: counter(step);
-      position: absolute;
-      left: 0;
-      background: var(--primary);
-      color: white;
-      width: 1.8rem;
-      height: 1.8rem;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-    }
-    
-    footer {
-      background: linear-gradient(135deg, #bbf7d0, #c4b5fd);
-      padding: 1.2rem;
-      text-align: center;
-      font-size: 0.85rem;
-      border-top: 2px dashed #000;
-      margin-top: 2rem;
+      animation: fadeIn 1.5s ease-in-out;
     }
   </style>
 </head>
-<body>
-<header>
-  <img src="https://play-lh.googleusercontent.com/9DqI-7OD7e_66ul85JsxQRYE10uVZXN44JRG72sU1H76ZPZVbMx-SdaQqbO25bPCaA=w240-h480-rw" alt="Born2Earn Logo">
-  <h1 class="shimmer">Refund & Cancellation Policy</h1>
-</header>
+<body class="bg-slate-900 text-slate-200 font-poppins overflow-x-hidden">
 
-<div class="marquee-container">
-  <div class="marquee-content">
-    ⚡ Instant Refunds for Eligible Cases ⚡ Easy Cancellations ⚡ 24/7 Support ⚡ Contact +919547671066 ⚡
+  <!-- HEADER -->
+  <header class="bg-gradient-to-br from-indigo-500 via-purple-600 to-purple-700 rounded-b-[3rem] px-6 py-16 text-center text-white shadow-lg shadow-indigo-700/50">
+    <img src="https://play-lh.googleusercontent.com/9DqI-7OD7e_66ul85JsxQRYE10uVZXN44JRG72sU1H76ZPZVbMx-SdaQqbO25bPCaA=w240-h480-rw" alt="Born2Earn Logo, a stylized purple and blue game controller with lightning bolt" class="mx-auto w-24 rounded-2xl mb-6" />
+    <h1 class="shimmer select-none">Refund &amp; Cancellation Policy</h1>
+    <p class="mt-2 text-yellow-400 font-semibold tracking-wide">⚡ Instant Refunds for Eligible Cases ⚡ Easy Cancellations ⚡ 24/7 Support ⚡ Contact +919547671066 ⚡</p>
+  </header>
+
+  <!-- MARQUEE -->
+  <div class="marquee">
+    <span>⚡ Instant Refunds for Eligible Cases ⚡ Easy Cancellations ⚡ 24/7 Support ⚡ Contact +919547671066 ⚡</span>
   </div>
-</div>
 
-<div class="container">
-  <div class="policy-section">
-    <h2>Refund Policy</h2>
-    <div class="notice-box">
-      <h3>Important Notice</h3>
-      <p>Digital game top-ups are typically non-refundable once processed. Exceptions apply only for:</p>
-      <ul>
+  <!-- CONTENT -->
+  <main class="container max-w-3xl mx-auto bg-slate-800 rounded-2xl p-8 mt-12 shadow-lg shadow-indigo-700/40 space-y-10">
+    <section>
+      <h2 class="text-indigo-400 text-2xl font-semibold mb-4 flex items-center gap-3">
+        <i class="fas fa-file-invoice-dollar text-yellow-400"></i> Refund Policy
+      </h2>
+      <p class="font-semibold text-yellow-400 mb-2">Important Notice</p>
+      <p class="leading-relaxed text-slate-300 text-base mb-4">
+        Digital game top-ups are typically non-refundable once processed. Exceptions apply only for:
+      </p>
+      <ul class="list-disc list-inside space-y-2 text-slate-300 text-base mb-6">
         <li>• Failed transactions (payment taken but no delivery)</li>
         <li>• Duplicate payments</li>
         <li>• Technical errors from our system</li>
       </ul>
-    </div>
-    
-    <h3>Refund Process:</h3>
-    <div class="process-steps">
-      <div class="step">Contact support within 24 hours with transaction proof</div>
-      <div class="step">Provide screenshots of payment and issue</div>
-      <div class="step">Verification by our team (3 business days)</div>
-      <div class="step">Refund processing (5-7 business days if approved)</div>
-    </div>
-  </div>
+      <p class="font-semibold text-yellow-400 mb-2">Refund Process:</p>
+      <ol class="list-decimal list-inside space-y-2 text-slate-300 text-base">
+        <li>Contact support within 24 hours with transaction proof</li>
+        <li>Provide screenshots of payment and issue</li>
+        <li>Verification by our team (3 business days)</li>
+        <li>Refund processing (5-7 business days if approved)</li>
+      </ol>
+    </section>
 
-  <div class="policy-section">
-    <h2>Cancellation Policy</h2>
-    <p>You may cancel orders only before processing begins:</p>
-    <ul>
-      <li>⏱️ Must request within 15 minutes of payment</li>
-      <li>📞 Immediate cancellation via customer support</li>
-      <li>💸 Refunds processed within 24 hours for cancellations</li>
-    </ul>
-    
-    <div class="notice-box">
-      <h3>Payment Account Restriction</h3>
-      <p>For security, only use your own payment methods. Third-party accounts are prohibited.</p>
-      <p><strong>हिंदी:</strong> केवल अपने खाते का उपयोग करें। अन्य खातों पर प्रतिबंध है।</p>
-      <p><strong>বাংলা:</strong> শুধুমাত্র আপনার নিজের অ্যাকাউন্ট ব্যবহার করুন। তৃতীয় পক্ষের অ্যাকাউন্ট নিষিদ্ধ।</p>
-    </div>
-  </div>
+    <section>
+      <h2 class="text-indigo-400 text-2xl font-semibold mb-4 flex items-center gap-3">
+        <i class="fas fa-ban text-yellow-400"></i> Cancellation Policy
+      </h2>
+      <p class="leading-relaxed text-slate-300 text-base mb-4">
+        You may cancel orders only before processing begins:
+      </p>
+      <ul class="list-disc list-inside space-y-2 text-slate-300 text-base mb-6">
+        <li>⏱️ Must request within 15 minutes of payment</li>
+        <li>📞 Immediate cancellation via customer support</li>
+        <li>💸 Refunds processed within 24 hours for cancellations</li>
+      </ul>
+    </section>
 
-  <div class="policy-section">
-    <h2>Contact Support</h2>
-    <p>For refund/cancellation requests:</p>
-    <p><strong>WhatsApp:</strong> +919547671066</p>
-    <p><strong>Call:</strong> +919547671067</p>
-    <p><strong>Email:</strong> support@born2earn.com</p>
-    <p>Available 24 hours, 7 days a week</p>
-  </div>
-</div>
+    <section>
+      <h2 class="text-indigo-400 text-2xl font-semibold mb-4 flex items-center gap-3">
+        <i class="fas fa-user-shield text-yellow-400"></i> Payment Account Restriction
+      </h2>
+      <p class="leading-relaxed text-slate-300 text-base mb-4">
+        For security, only use your own payment methods. Third-party accounts are prohibited.
+      </p>
+      <p class="font-semibold text-yellow-400 mb-2">हिंदी:</p>
+      <p class="text-slate-300 mb-4">केवल अपने खाते का उपयोग करें। अन्य खातों पर प्रतिबंध है।</p>
+      <p class="font-semibold text-yellow-400 mb-2">বাংলা:</p>
+      <p class="text-slate-300">শুধুমাত্র আপনার নিজের অ্যাকাউন্ট ব্যবহার করুন। তৃতীয় পক্ষের অ্যাকাউন্ট নিষিদ্ধ।</p>
+    </section>
 
-<footer>
-  <p>© 2025 Born2Earn Game Shop. All rights reserved.</p>
-  <p>Last Updated: June 2024</p>
-</footer>
+    <section>
+      <h2 class="text-indigo-400 text-2xl font-semibold mb-4 flex items-center gap-3">
+        <i class="fas fa-headset text-yellow-400"></i> Contact Support
+      </h2>
+      <p class="leading-relaxed text-slate-300 text-base mb-2">
+        For refund/cancellation requests:
+      </p>
+      <p class="text-slate-300 text-base mb-2">
+        <strong>WhatsApp:</strong> <a href="https://wa.me/919547671066" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300 transition">+919547671066</a>
+      </p>
+      <p class="text-slate-300 text-base mb-2">
+        <strong>Call:</strong> +919547671067
+      </p>
+      <p class="text-slate-300 text-base mb-4">
+        <strong>Email:</strong> <a href="mailto:support@born2earn.com" class="text-indigo-400 hover:text-indigo-300 transition">support@born2earn.com</a>
+      </p>
+      <p class="text-slate-300 text-base">
+        Available 24 hours, 7 days a week
+      </p>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mt-16 bg-slate-800 border-t border-slate-700 py-6 text-center text-indigo-400 text-sm select-none">
+    <p>© 2025 Born2Earn. All rights reserved.</p>
+    <p class="mt-1">Last Updated: June 2024</p>
+  </footer>
 </body>
 </html>
