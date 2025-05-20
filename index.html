@@ -86,6 +86,7 @@
       scrollbar-width: none; /* Firefox */
       scroll-snap-type: x mandatory;
       -webkit-scroll-snap-type: x mandatory;
+      position: relative;
     }
     .topup-scroll-container::-webkit-scrollbar {
       display: none; /* Chrome, Safari */
@@ -94,6 +95,9 @@
       display: flex;
       gap: 2rem;
       padding-bottom: 1rem;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      will-change: transform;
     }
     .topup-item {
       flex: 0 0 auto;
@@ -112,6 +116,7 @@
       align-items: center;
       justify-content: flex-start;
       gap: 1rem;
+      user-select: none;
     }
     .topup-item:focus-visible {
       outline: 2px solid #facc15;
@@ -127,6 +132,11 @@
       margin: 0;
       filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.3));
       flex-shrink: 0;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+      border-bottom-left-radius: 0.5rem;
+      border-bottom-right-radius: 0.5rem;
+      user-select: none;
     }
     /* Shimmer effect on entire item box */
     .topup-item.shimmer-box {
@@ -295,69 +305,142 @@
       tabindex="0"
     >
       <div class="topup-items" id="topup-items">
-        <article
-          class="topup-item shimmer-box shimmer-text"
-          role="listitem"
-          tabindex="0"
-          aria-label="Free Fire Diamonds: Secure and instant top-ups at great prices."
-        >
-          <img
-            src="https://cdn1.codashop.com/S/content/common/images/denom-image/FreeFire/Freefire_diamonds.png"
-            alt="Free Fire Diamonds icon showing a shiny blue diamond with sparkles"
-            loading="lazy"
-            decoding="async"
-            class="interactive-icon"
-          />
-          <p><strong>Free Fire Diamonds</strong><br />Secure and instant top-ups at great prices.</p>
-        </article>
+        <!-- Free Fire -->
+<article
+  class="topup-item shimmer-box shimmer-text"
+  role="listitem"
+  tabindex="0"
+  aria-label="Free Fire Diamonds: Instant top-up for nonstop action."
+>
+  <img
+    src="https://html-generator.com/uploads/images/2025/05/20/56555KDG5HBR2HW.jpeg"
+    alt="Free Fire Diamonds icon with a fighter character and flaming background"
+    loading="lazy"
+    decoding="async"
+    class="interactive-icon rounded-t-2xl"
+  />
+  <p><strong>Free Fire Diamonds</strong><br />Instant top-up for nonstop action.</p>
+</article>
 
-        <article
-          class="topup-item shimmer-box shimmer-text"
-          role="listitem"
-          tabindex="0"
-          aria-label="BGMI UC: Quick UC delivery to boost your battles."
-        >
-          <img
-            src="https://cdn1.codashop.com/S/content/common/images/denom-image/PUBG/325_PUBG_UC.png"
-            alt="BGMI UC icon showing a soldier character in combat gear holding a rifle"
-            loading="lazy"
-            decoding="async"
-            class="interactive-icon"
-          />
-          <p><strong>BGMI UC</strong><br />Quick UC delivery to boost your battles.</p>
-        </article>
+<!-- BGMI -->
+<article
+  class="topup-item shimmer-box shimmer-text"
+  role="listitem"
+  tabindex="0"
+  aria-label="BGMI UC: Quick UC delivery to boost your battles."
+>
+  <img
+    src="https://html-generator.com/uploads/images/2025/05/20/57251I9XHUO7O_O.jpeg"
+    alt="BGMI UC icon showing a soldier character in combat gear holding a rifle"
+    loading="lazy"
+    decoding="async"
+    class="interactive-icon rounded-t-2xl"
+  />
+  <p><strong>BGMI UC</strong><br />Quick UC delivery to boost your battles.</p>
+</article>
 
-        <article
-          class="topup-item shimmer-box shimmer-text"
-          role="listitem"
-          tabindex="0"
-          aria-label="COD Points: Power up your game with authentic COD Points."
-        >
-          <img
-            src="https://cdn1.codashop.com/S/content/common/images/denom-image/CODM/100x100/CallofDuty_CP.png"
-            alt="Call of Duty Points icon showing a military badge with stars and stripes"
-            loading="lazy"
-            decoding="async"
-            class="interactive-icon"
-          />
-          <p><strong>COD Points</strong><br />Power up your game with authentic COD Points.</p>
-        </article>
+<!-- Call of Duty -->
+<article
+  class="topup-item shimmer-box shimmer-text"
+  role="listitem"
+  tabindex="0"
+  aria-label="Call of Duty CP: Load up CP fast and gear up your squad."
+>
+  <img
+    src="https://html-generator.com/uploads/images/2025/05/20/97398KFU7XXU9DD.jpg"
+    alt="Call of Duty CP icon with a tactical soldier ready for battle"
+    loading="lazy"
+    decoding="async"
+    class="interactive-icon rounded-t-2xl"
+  />
+  <p><strong>Call of Duty CP</strong><br />Load up CP fast and gear up your squad.</p>
+</article>
 
-        <article
-          class="topup-item shimmer-box shimmer-text"
-          role="listitem"
-          tabindex="0"
-          aria-label="Gift Cards: Amazon, Google Play & more — delivered instantly!"
-        >
-          <img
-            src="https://html-generator.com/uploads/images/2023/12/27/81701PHYA6U__NX.png"
-            alt="Gift Cards icon showing a wrapped gift box with a bow and sparkles"
-            loading="lazy"
-            decoding="async"
-            class="interactive-icon"
-          />
-          <p><strong>Gift Cards</strong><br />Amazon, Google Play &amp; more — delivered instantly!</p>
-        </article>
+<!-- CoS -->
+<article
+  class="topup-item shimmer-box shimmer-text"
+  role="listitem"
+  tabindex="0"
+  aria-label="CoS Top Up: Fast recharge for smooth gameplay."
+>
+  <img
+    src="https://html-generator.com/uploads/images/2025/05/20/28778SFOF4S1YNQ.png"
+    alt="CoS icon showing in-game currency symbol and a warrior"
+    loading="lazy"
+    decoding="async"
+    class="interactive-icon rounded-t-2xl"
+  />
+  <p><strong>COC Top Up</strong><br />Fast recharge for smooth gameplay.</p>
+</article>
+
+<!-- Gift Card -->
+<article
+  class="topup-item shimmer-box shimmer-text"
+  role="listitem"
+  tabindex="0"
+  aria-label="Gift Card: Shop, stream or play using your digital wallet."
+>
+  <img
+    src="https://html-generator.com/uploads/images/2025/05/20/079080HY8CUCWKL.jpg"
+    alt="Gift Card icon with a wrapped gift and digital elements"
+    loading="lazy"
+    decoding="async"
+    class="interactive-icon rounded-t-2xl"
+  />
+  <p><strong>Gift Card</strong><br />Shop, stream or play using your digital wallet.</p>
+</article>
+
+<!-- ShareChat -->
+<article
+  class="topup-item shimmer-box shimmer-text"
+  role="listitem"
+  tabindex="0"
+  aria-label="ShareChat Coins: Boost visibility and unlock features."
+>
+  <img
+    src="https://html-generator.com/uploads/images/2025/05/20/09460YQIQ4HFXY3.png"
+    alt="ShareChat coins icon with chat bubbles and sparkles"
+    loading="lazy"
+    decoding="async"
+    class="interactive-icon rounded-t-2xl"
+  />
+  <p><strong>ShareChat Coins</strong><br />Boost visibility and unlock features.</p>
+</article>
+
+<!-- Social Media Service -->
+<article
+  class="topup-item shimmer-box shimmer-text"
+  role="listitem"
+  tabindex="0"
+  aria-label="Social Media Boost: Get more reach, likes and real engagement."
+>
+  <img
+    src="https://html-generator.com/uploads/images/2025/05/20/087650OQN6E_AI3.png"
+    alt="Social media boost icon with heart, like, and share elements"
+    loading="lazy"
+    decoding="async"
+    class="interactive-icon rounded-t-2xl"
+  />
+  <p><strong>Social Media Boost</strong><br />Get more reach, likes and real engagement.</p>
+</article>
+
+<!-- All Online Game Top Up -->
+<article
+  class="topup-item shimmer-box shimmer-text"
+  role="listitem"
+  tabindex="0"
+  aria-label="All Game Top-Up: One-stop recharge for every online game."
+>
+  <img
+    src="https://html-generator.com/uploads/images/2025/05/20/09460YQIQ4HFXY3.png"
+    alt="Online gaming icon with multiple controllers and coins"
+    loading="lazy"
+    decoding="async"
+    class="interactive-icon rounded-t-2xl"
+  />
+  <p><strong>All Game Top-Up</strong><br />One-stop recharge for every online game.</p>
+</article>
+
       </div>
     </div>
   </section>
@@ -535,7 +618,7 @@
   >
     <div class="flex justify-center space-x-6 mb-6" aria-label="Social media links">
       <a
-        href="https://www.facebook.com/"
+        href="https://www.facebook.com/share/16cqDEmSww/"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Facebook"
@@ -544,7 +627,7 @@
         <i class="fab fa-facebook-f text-2xl"></i>
       </a>
       <a
-        href="http://wa.me/+919933525757"
+        href="https://whatsapp.com/channel/0029VaAsPLzAzNbnr51iW421"
         target="_blank"
         rel="noopener noreferrer"
         aria-label="WhatsApp"
@@ -665,54 +748,60 @@
       observer.observe(milestoneSection);
     }
 
-    // Top-Up Services auto scroll and shimmer effect cycling
+    // Smooth Auto scroll for Top-Up Services using requestAnimationFrame and transform for better performance
     const topupContainer = document.querySelector('.topup-scroll-container');
     const topupItems = document.querySelectorAll('.topup-item');
-    let scrollAmount = 0;
-    const scrollStep = 1; // pixels per frame
-    const scrollInterval = 20; // ms between frames
+    let scrollX = 0;
+    let maxScroll;
 
-    // Function to add shimmer effect to all items together
-    function addShimmerToAll() {
-      topupItems.forEach((item) => {
-        item.classList.add('shimmer-box', 'shimmer-text');
-      });
+    // Duplicate items to create infinite scroll illusion
+    const topupItemsContainer = document.querySelector('.topup-items');
+    const clone = topupItemsContainer.innerHTML;
+    topupItemsContainer.insertAdjacentHTML('beforeend', clone);
+
+    function updateMaxScroll() {
+      maxScroll = topupItemsContainer.scrollWidth / 2;
     }
+    updateMaxScroll();
+    window.addEventListener('resize', updateMaxScroll);
 
-    function removeShimmerFromAll() {
-      topupItems.forEach((item) => {
-        item.classList.remove('shimmer-box', 'shimmer-text');
-      });
-    }
+    let lastTimestamp = 0;
+    const speed = 0.1; // pixels per millisecond
 
-    // Start with shimmer on all items
-    addShimmerToAll();
+    function smoothAutoScroll(timestamp) {
+      if (!lastTimestamp) lastTimestamp = timestamp;
+      const delta = timestamp - lastTimestamp;
+      lastTimestamp = timestamp;
 
-    // Auto scroll function
-    function autoScroll() {
-      if (!topupContainer) return;
-      scrollAmount += scrollStep;
-      if (scrollAmount >= topupContainer.scrollWidth - topupContainer.clientWidth) {
-        scrollAmount = 0;
+      scrollX += speed * delta;
+      if (scrollX >= maxScroll) {
+        scrollX -= maxScroll;
       }
-      topupContainer.scrollLeft = scrollAmount;
+      topupItemsContainer.style.transform = `translateX(${-scrollX}px)`;
+
+      requestAnimationFrame(smoothAutoScroll);
     }
 
-    let scrollTimer = setInterval(autoScroll, scrollInterval);
+    let animationFrameId = requestAnimationFrame(smoothAutoScroll);
 
     // Pause auto scroll on user interaction
-    topupContainer.addEventListener('mouseenter', () => {
-      clearInterval(scrollTimer);
-    });
-    topupContainer.addEventListener('mouseleave', () => {
-      scrollTimer = setInterval(autoScroll, scrollInterval);
-    });
-    topupContainer.addEventListener('touchstart', () => {
-      clearInterval(scrollTimer);
-    });
-    topupContainer.addEventListener('touchend', () => {
-      scrollTimer = setInterval(autoScroll, scrollInterval);
-    });
+    function pauseScroll() {
+      if (animationFrameId) {
+        cancelAnimationFrame(animationFrameId);
+        animationFrameId = null;
+      }
+    }
+    function resumeScroll() {
+      if (!animationFrameId) {
+        lastTimestamp = 0;
+        animationFrameId = requestAnimationFrame(smoothAutoScroll);
+      }
+    }
+
+    topupContainer.addEventListener('mouseenter', pauseScroll);
+    topupContainer.addEventListener('mouseleave', resumeScroll);
+    topupContainer.addEventListener('touchstart', pauseScroll);
+    topupContainer.addEventListener('touchend', resumeScroll);
 
     // Icon animation on hover and click
     const interactiveIcons = document.querySelectorAll('.interactive-icon');
