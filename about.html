@@ -1,43 +1,29 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About Us | Born2Earn Game Shop</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: #0f172a;
-      color: #e2e8f0;
-      overflow-x: hidden;
+    @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
     }
-    header {
-      background: linear-gradient(135deg, #6366f1, #8b5cf6);
-      padding: 50px 20px;
-      text-align: center;
-      color: white;
-      border-bottom-left-radius: 50px;
-      border-bottom-right-radius: 50px;
-    }
-    .logo {
-      width: 100px;
-      border-radius: 20px;
-      margin-bottom: 20px;
+    @keyframes marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
     }
     .shimmer {
-      font-size: 2.5rem;
+      font-family: 'Poppins', sans-serif;
       font-weight: 700;
+      font-size: 2.5rem;
       background: linear-gradient(90deg, #ffffff, #93c5fd, #ffffff);
       background-size: 200% 100%;
       animation: shimmer 3s infinite linear;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-    }
-    @keyframes shimmer {
-      0% { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
     }
     .marquee {
       background-color: #1e293b;
@@ -52,96 +38,88 @@
       padding-left: 100%;
       animation: marquee 12s linear infinite;
     }
-    @keyframes marquee {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
-    }
-    .container {
-      max-width: 900px;
-      margin: 50px auto;
-      padding: 30px;
-      background-color: #1e293b;
-      border-radius: 20px;
-      box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
-      animation: fadeIn 1.5s ease-in-out;
-    }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    h2 {
-      color: #93c5fd;
-      font-size: 1.8rem;
-      margin-top: 20px;
-      margin-bottom: 10px;
-    }
-    p {
-      line-height: 1.8;
-      margin-bottom: 20px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #1e293b;
-      color: #93c5fd;
-      border-top: 1px solid #334155;
-      margin-top: 50px;
+    .container {
+      animation: fadeIn 1.5s ease-in-out;
     }
   </style>
 </head>
-<body>
+<body class="bg-slate-900 text-slate-200 font-poppins overflow-x-hidden">
 
-<!-- ======= HEADER ======= -->
-<header>
-  <img src="https://play-lh.googleusercontent.com/9DqI-7OD7e_66ul85JsxQRYE10uVZXN44JRG72sU1H76ZPZVbMx-SdaQqbO25bPCaA=w240-h480-rw" alt="Born2Earn Logo" class="logo" />
-  <h1 class="shimmer">About Us</h1>
-  <p>Who we are, and why gamers trust us ⚡</p>
-</header>
+  <!-- HEADER -->
+  <header class="bg-gradient-to-br from-indigo-500 via-purple-600 to-purple-700 rounded-b-[3rem] px-6 py-16 text-center text-white shadow-lg shadow-indigo-700/50">
+    <img src="https://play-lh.googleusercontent.com/9DqI-7OD7e_66ul85JsxQRYE10uVZXN44JRG72sU1H76ZPZVbMx-SdaQqbO25bPCaA=w240-h480-rw" alt="Born2Earn Logo, a stylized purple and blue game controller with lightning bolt" class="mx-auto w-24 rounded-2xl mb-6" />
+    <h1 class="shimmer select-none">About Us</h1>
+    <p class="mt-2 text-yellow-400 font-semibold tracking-wide">Who we are, and why gamers trust us ⚡</p>
+  </header>
 
-<!-- ======= MARQUEE ======= -->
-<div class="marquee">
-  <span>⚡ Trusted by thousands of gamers | Fast top-ups | Instant support | Powered by Born2Earn Game Shop ⚡</span>
-</div>
+  <!-- MARQUEE -->
+  <div class="marquee">
+    <span>⚡ Trusted by thousands of gamers | Fast top-ups | Instant support | Powered by Born2Earn Game Shop ⚡</span>
+  </div>
 
-<!-- ======= ABOUT CONTENT ======= -->
-<div class="container">
-  <h2>🎮 Our Journey</h2>
-  <p>
-    Born2Earn Game Shop started with one simple idea — to make game top-ups **faster, cheaper, and easier** for players across India. What began as a passion project by a group of gamers is now one of the fastest-growing online top-up platforms trusted by thousands.
-  </p>
+  <!-- ABOUT CONTENT -->
+  <main class="container max-w-3xl mx-auto bg-slate-800 rounded-2xl p-8 mt-12 shadow-lg shadow-indigo-700/40">
+    <section class="mb-10">
+      <h2 class="text-indigo-400 text-2xl font-semibold mb-4 flex items-center gap-3">
+        <i class="fas fa-gamepad text-yellow-400"></i> Our Journey
+      </h2>
+      <p class="leading-relaxed text-slate-300 text-base">
+        Born2Earn Game Shop started with one simple idea — to make game top-ups <strong class="text-yellow-400">faster, cheaper, and easier</strong> for players across India. What began as a passion project by a group of gamers is now one of the fastest-growing online top-up platforms trusted by thousands.
+      </p>
+    </section>
 
-  <h2>🚀 What We Offer</h2>
-  <p>
-    Whether it’s <strong style="color:#facc15;">PUBG UC</strong>, <strong style="color:#38bdf8;">Free Fire Diamonds</strong>, <strong style="color:#facc15;">MLBB Credits</strong>, or other in-game currencies — we deliver it <strong style="color:#93c5fd;">instantly</strong> and at unbeatable prices. Our platform is built with secure payment systems, real-time processing, and direct support for every order.
-  </p>
+    <section class="mb-10">
+      <h2 class="text-indigo-400 text-2xl font-semibold mb-4 flex items-center gap-3">
+        <i class="fas fa-rocket text-yellow-400"></i> What We Offer
+      </h2>
+      <p class="leading-relaxed text-slate-300 text-base">
+        Whether it’s <strong class="text-yellow-400">PUBG UC</strong>, <strong class="text-sky-400">Free Fire Diamonds</strong>, <strong class="text-yellow-400">MLBB Credits</strong>, or other in-game currencies — we deliver it <strong class="text-indigo-400">instantly</strong> and at unbeatable prices. Our platform is built with secure payment systems, real-time processing, and direct support for every order.
+      </p>
+    </section>
 
-  <h2>🛡️ Why Choose Us?</h2>
-  <ul style="margin-left: 20px;">
-    <li>⚡ Real-time delivery on supported top-ups</li>
-    <li>⚡ Verified payment gateway & encrypted transactions</li>
-    <li>⚡ Affordable pricing with no hidden charges</li>
-    <li>⚡ WhatsApp-based customer support</li>
-    <li>⚡ 100% focus on data safety and privacy</li>
-  </ul>
+    <section class="mb-10">
+      <h2 class="text-indigo-400 text-2xl font-semibold mb-4 flex items-center gap-3">
+        <i class="fas fa-shield-alt text-yellow-400"></i> Why Choose Us?
+      </h2>
+      <ul class="list-disc list-inside space-y-2 text-slate-300 text-base">
+        <li>⚡ Real-time delivery on supported top-ups</li>
+        <li>⚡ Verified payment gateway & encrypted transactions</li>
+        <li>⚡ Affordable pricing with no hidden charges</li>
+        <li>⚡ WhatsApp-based customer support</li>
+        <li>⚡ 100% focus on data safety and privacy</li>
+      </ul>
+    </section>
 
-  <h2>📈 Our Mission</h2>
-  <p>
-    To become India’s #1 online destination for gaming top-ups and digital goods by offering lightning-fast delivery, excellent customer service, and complete transparency.
-  </p>
+    <section class="mb-10">
+      <h2 class="text-indigo-400 text-2xl font-semibold mb-4 flex items-center gap-3">
+        <i class="fas fa-chart-line text-yellow-400"></i> Our Mission
+      </h2>
+      <p class="leading-relaxed text-slate-300 text-base">
+        To become India’s #1 online destination for gaming top-ups and digital goods by offering lightning-fast delivery, excellent customer service, and complete transparency.
+      </p>
+    </section>
 
-  <h2>📍 Location & Support</h2>
-  <p>
-    We’re based in <strong>Malda, West Bengal</strong>, but serve customers across India. Have a question? Chat with us any time at:
-    <br/><br/>
-    📧 <strong>Email:</strong> <a href="mailto:born2earn1995@gmail.com" style="color: #93c5fd;">born2earn1995@gmail.com</a><br/>
-    📱 <strong>WhatsApp:</strong> <a href="https://wa.me/919547671067" target="_blank" style="color: #93c5fd;">+91 95476 71067</a>
-  </p>
-</div>
+    <section>
+      <h2 class="text-indigo-400 text-2xl font-semibold mb-4 flex items-center gap-3">
+        <i class="fas fa-map-marker-alt text-yellow-400"></i> Location & Support
+      </h2>
+      <p class="leading-relaxed text-slate-300 text-base">
+        We’re based in <strong>Malda, West Bengal</strong>, but serve customers across India. Have a question? Chat with us any time at:
+      </p>
+      <p class="mt-4 text-slate-300 text-base">
+        📧 <strong>Email:</strong> <a href="mailto:born2earn1995@gmail.com" class="text-indigo-400 hover:text-indigo-300 transition">born2earn1995@gmail.com</a><br />
+        📱 <strong>WhatsApp:</strong> <a href="https://wa.me/919547671067" target="_blank" rel="noopener noreferrer" class="text-indigo-400 hover:text-indigo-300 transition">+91 95476 71067</a>
+      </p>
+    </section>
+  </main>
 
-<!-- ======= FOOTER ======= -->
-<footer>
-  <p>© 2025 Born2Earn Game Shop. All rights reserved.</p>
-</footer>
-
+  <!-- FOOTER -->
+  <footer class="mt-16 bg-slate-800 border-t border-slate-700 py-6 text-center text-indigo-400 text-sm select-none">
+    <p>© 2025 Born2Earn Game Shop. All rights reserved.</p>
+  </footer>
 </body>
 </html>
