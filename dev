@@ -1,0 +1,125 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   Developer Profile | Born2Earn Game Shop
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   @keyframes shimmer {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+    .shimmer {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 2.5rem;
+      background: linear-gradient(90deg, #ffffff, #93c5fd, #ffffff);
+      background-size: 200% 100%;
+      animation: shimmer 3s infinite linear;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+ </head>
+ <body class="bg-slate-900 text-slate-200 font-poppins overflow-x-hidden">
+  <!-- HEADER -->
+  <header class="bg-gradient-to-br from-indigo-500 via-purple-600 to-purple-700 rounded-b-[3rem] px-6 py-16 text-center text-white shadow-lg shadow-indigo-700/50">
+   <img alt="Developer portrait, young South Asian male with short black hair, wearing glasses and a casual shirt, smiling confidently" class="mx-auto w-36 h-36 rounded-full object-cover mb-6 border-4 border-indigo-400 shadow-lg" height="150" src="https://html-generator.com/uploads/images/2025/05/20/974181EC7A3FNF_.jpg" width="150"/>
+   <h1 class="shimmer select-none">
+    Developer Profile
+   </h1>
+   <p class="mt-2 text-yellow-400 font-semibold tracking-wide">
+    Meet the Creator of Born2Earn Game Shop
+   </p>
+  </header>
+  <!-- MAIN CONTENT -->
+  <main class="max-w-3xl mx-auto bg-slate-800 rounded-3xl p-10 mt-12 shadow-lg shadow-indigo-700/40 space-y-8">
+   <section>
+    <h2 class="text-indigo-400 text-3xl font-semibold mb-4">
+        Himangshu Paul
+    </h2>
+    <p class="text-slate-300 text-lg leading-relaxed">
+        Himangshu is a passionate full-stack developer with over 4 years of experience building secure and scalable web applications. He specializes in modern JavaScript frameworks and Tailwind CSS, focusing on creating seamless user experiences for gaming and e-commerce platforms.
+    </p>
+   </section>
+   <section>
+    <h3 class="text-yellow-400 text-2xl font-semibold mb-3 flex items-center gap-3">
+     <i class="fas fa-code">
+     </i>
+     Skills &amp; Technologies
+    </h3>
+    <ul class="list-disc list-inside text-slate-300 space-y-2 text-lg">
+     <li>
+      JavaScript (ES6+), TypeScript
+     </li>
+     <li>
+      React, Next.js, Node.js, Express
+     </li>
+     <li>
+      Tailwind CSS, CSS3, HTML5
+     </li>
+     <li>
+      REST APIs, GraphQL
+     </li>
+     <li>
+      Database: MongoDB, PostgreSQL
+     </li>
+     <li>
+      Version Control: Git, GitHub
+     </li>
+     <li>
+      Deployment: Vercel, Netlify, AWS
+     </li>
+     <li>
+      Security best practices &amp; performance optimization
+     </li>
+    </ul>
+   </section>
+   <section>
+    <h3 class="text-yellow-400 text-2xl font-semibold mb-3 flex items-center gap-3">
+     <i class="fas fa-briefcase">
+     </i>
+     Role in Born2Earn
+    </h3>
+    <p class="text-slate-300 text-lg leading-relaxed">
+     Himangshu designed and developed the entire Born2Earn platform, focusing on data security, fast performance, and a user-friendly interface. He implemented the secure payment integrations, real-time top-up processing, and customer support features to ensure a reliable experience for gamers across India.
+    </p>
+   </section>
+   <section>
+    <h3 class="text-yellow-400 text-2xl font-semibold mb-3 flex items-center gap-3">
+     <i class="fas fa-envelope">
+     </i>
+     Contact &amp; Socials
+    </h3>
+    <ul class="text-slate-300 space-y-2 text-lg">
+     <li>
+      <i class="fas fa-envelope mr-2 text-indigo-400">
+      </i>
+      <a class="hover:text-indigo-300 transition" href="mailto:himangshu.inbox@gmail.com">
+       himangshu.inbox@gmail.com
+      </a>
+     </li>
+     <li>
+      
+     <li>
+      <i class="fab fa-linkedin mr-2 text-indigo-400">
+      </i>
+      <a class="hover:text-indigo-300 transition" href="https://www.linkedin.com/in/himangshupaul/" rel="noopener noreferrer" target="_blank">@himangshupaul
+      </a>
+     </li>
+    </ul>
+   </section>
+  </main>
+  <!-- FOOTER -->
+  <footer class="mt-16 bg-slate-800 border-t border-slate-700 py-6 text-center text-indigo-400 text-sm select-none">
+   <p>
+    © 2025 Born2Earn. All rights reserved.
+   </p>
+  </footer>
+ </body>
+</html>
