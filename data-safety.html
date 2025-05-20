@@ -1,272 +1,134 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Born2Earn - Data Safety</title>
-  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Born2Earn Data Safety</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <style>
-    /* ===== MOBILE-ONLY STYLES ===== */
-    :root {
-      --primary: #01ca12;
-      --secondary: #fffb10;
-      --accent: #000000;
-      --text: #333;
-      --bg: linear-gradient(to bottom, #a6ff83, #81ffa9);
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Comic Neue', cursive;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-      font-size: 15px;
-    }
-    
-    /* Header */
-    header {
-      padding: 1.5rem 1rem;
-      text-align: center;
-      background: linear-gradient(135deg, #beb2f5, #fcd34d);
-    }
-    
-    header img {
-      width: 80px;
-      border-radius: 8px;
-      margin-bottom: 0.5rem;
-      animation: float 3s ease-in-out infinite;
-    }
-    
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
-    }
-    
-    h1 {
-      font-size: 1.3rem;
-      background: linear-gradient(90deg, #1eff00, #8e00f4, #d0ff00);
-      background-size: 300% 100%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: shimmer 3s infinite linear;
-    }
-    
     @keyframes shimmer {
       0% { background-position: 200% 0; }
       100% { background-position: -200% 0; }
     }
-    
-    /* Marquee */
-    .marquee {
-      padding: 0.7rem;
-      background: var(--secondary);
-      border-top: 2px dashed #000;
-      border-bottom: 2px dashed #000;
-      overflow: hidden;
-      white-space: nowrap;
-      margin-bottom: 1.5rem;
-    }
-    
-    .marquee span {
-      display: inline-block;
-      padding-left: 100%;
-      animation: marquee 12s linear infinite;
-      font-size: 0.85rem;
-    }
-    
     @keyframes marquee {
       0% { transform: translateX(0); }
       100% { transform: translateX(-100%); }
     }
-    
-    /* Content */
-    .container {
-      padding: 0 1rem;
-      max-width: 100%;
+    .shimmer {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 2.5rem;
+      background: linear-gradient(90deg, #ffffff, #93c5fd, #ffffff);
+      background-size: 200% 100%;
+      animation: shimmer 3s infinite linear;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    
-    h2 {
+    .marquee {
+      background-color: #1e293b;
       color: #facc15;
-      text-align: center;
-      margin: 1.5rem 0;
-      font-size: 1.2rem;
-      animation: fadeIn 1s ease-out;
+      padding: 10px;
+      font-weight: 600;
+      overflow: hidden;
+      white-space: nowrap;
     }
-    
-    p {
-      margin-bottom: 1.2rem;
-      text-align: center;
+    .marquee span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 12s linear infinite;
     }
-    
-    .highlight {
-      color: #d0ff00;
-      font-weight: bold;
-    }
-    
-    h3 {
-      color: #93c5fd;
-      margin: 1.8rem 0 1rem 0;
-      font-size: 1.1rem;
-    }
-    
-    ul {
-      margin-left: 1.2rem;
-      margin-bottom: 1.5rem;
-    }
-    
-    li {
-      margin-bottom: 0.6rem;
-      font-size: 0.95rem;
-    }
-    
-    /* Form */
-    #dataSafetyForm {
-      background: white;
-      padding: 1.2rem;
-      border-radius: 8px;
-      margin: 2rem 0;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-    
-    .form-group {
-      margin-bottom: 1.2rem;
-    }
-    
-    label {
-      display: block;
-      margin-bottom: 0.4rem;
-      font-weight: bold;
-      font-size: 0.95rem;
-    }
-    
-    input, select, textarea {
-      width: 100%;
-      padding: 0.7rem;
-      border: 1px solid #ddd;
-      border-radius: 6px;
-      font-family: 'Comic Neue', cursive;
-      font-size: 0.95rem;
-    }
-    
-    textarea {
-      min-height: 100px;
-    }
-    
-    .text-center {
-      text-align: center;
-    }
-    
-    .btn {
-      background: var(--primary);
-      color: white;
-      border: none;
-      padding: 0.8rem 1.5rem;
-      border-radius: 6px;
-      font-weight: bold;
-      font-size: 1rem;
-      cursor: pointer;
-      margin-top: 0.5rem;
-      animation: pulse 2s infinite;
-      transition: all 0.3s ease;
-    }
-    
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
-    
-    .btn:hover {
-      background: var(--accent);
-    }
-    
-    /* Footer */
-    footer {
-      background: linear-gradient(135deg, #bbf7d0, #c4b5fd);
-      padding: 1.2rem;
-      text-align: center;
-      font-size: 0.85rem;
-      border-top: 2px dashed #000;
-    }
-    
-    /* Animations */
     @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .container {
+      animation: fadeIn 1.5s ease-in-out;
     }
   </style>
 </head>
-<body>
-<!-- ====== HEADER ====== -->
-<header>
-    <img src="https://play-lh.googleusercontent.com/9DqI-7OD7e_66ul85JsxQRYE10uVZXN44JRG72sU1H76ZPZVbMx-SdaQqbO25bPCaA=w240-h480-rw" alt="Born2Earn Game Shop Logo">
-    <h1 class="shimmer">Born2Earn Game Shop Data Safety</h1>
-</header>
+<body class="bg-slate-900 text-slate-200 font-poppins overflow-x-hidden">
 
-<!-- ====== SCROLLING MARQUEE ====== -->
-<div class="marquee">
-    <span>⚡ Data Safety First ⚡ Secure Your Information ⚡ Born2Earn Game Shop ⚡ Account & Data Deletion Requests Available ⚡</span>
-</div>
+  <!-- HEADER -->
+  <header class="bg-gradient-to-br from-indigo-500 via-purple-600 to-purple-700 rounded-b-[3rem] px-6 py-16 text-center text-white shadow-lg shadow-indigo-700/50">
+    <img src="https://play-lh.googleusercontent.com/9DqI-7OD7e_66ul85JsxQRYE10uVZXN44JRG72sU1H76ZPZVbMx-SdaQqbO25bPCaA=w240-h480-rw" alt="Born2Earn Game Shop Logo, a stylized purple and blue game controller with lightning bolt" class="mx-auto w-24 rounded-2xl mb-6" />
+    <h1 class="shimmer select-none">Born2Earn Data Safety</h1>
+  </header>
 
+  <!-- MARQUEE -->
+  <div class="marquee">
+    <span>⚡ Data Safety First ⚡ Secure Your Information ⚡ Born2Earn ⚡ Account & Data Deletion Requests Available ⚡</span>
+  </div>
 
-    <p>Fill out the form below and submit your request directly via WhatsApp to our support team.</p>
-</div>
+  <!-- FORM INSTRUCTION -->
+  <main class="max-w-3xl mx-auto px-6 mt-10">
+    <p class="text-slate-300 mb-8 text-center text-base sm:text-lg">
+      Fill out the form below and submit your request directly via WhatsApp to our support team.
+    </p>
 
-<!-- ====== FORM SECTION ====== -->
-<div class="container">
-    <form id="dataSafetyForm">
+    <!-- FORM SECTION -->
+    <div class="container bg-slate-800 rounded-2xl p-8 shadow-lg shadow-indigo-700/40">
+      <form id="dataSafetyForm" class="space-y-6">
         <div class="form-group">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
+          <label for="name" class="block mb-2 font-semibold text-slate-300">Name:</label>
+          <input type="text" id="name" name="name" required autocomplete="name" 
+            class="w-full rounded-lg border border-slate-600 bg-slate-700 px-4 py-2 text-slate-200 placeholder-slate-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition" 
+            placeholder="Enter your full name" />
         </div>
         <div class="form-group">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
+          <label for="email" class="block mb-2 font-semibold text-slate-300">Email:</label>
+          <input type="email" id="email" name="email" required autocomplete="email" 
+            class="w-full rounded-lg border border-slate-600 bg-slate-700 px-4 py-2 text-slate-200 placeholder-slate-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition" 
+            placeholder="example@domain.com" />
         </div>
         <div class="form-group">
-            <label for="mobile">Mobile Number:</label>
-            <input type="tel" id="mobile" name="mobile" placeholder="Enter number" required>
+          <label for="mobile" class="block mb-2 font-semibold text-slate-300">Mobile Number:</label>
+          <input type="tel" id="mobile" name="mobile" placeholder="Enter number" required autocomplete="tel" pattern="[0-9+ ]{7,15}" 
+            class="w-full rounded-lg border border-slate-600 bg-slate-700 px-4 py-2 text-slate-200 placeholder-slate-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition" />
         </div>
         <div class="form-group">
-            <label for="requestType">Request Type:</label>
-            <select id="requestType" name="requestType" required>
-                <option value="Delete Account">Delete Account</option>
-                <option value="Delete Data">Delete Data</option>
-                <option value="Other">Other</option>
-            </select>
+          <label for="requestType" class="block mb-2 font-semibold text-slate-300">Request Type:</label>
+          <select id="requestType" name="requestType" required 
+            class="w-full rounded-lg border border-slate-600 bg-slate-700 px-4 py-2 text-slate-200 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition">
+            <option value="Delete Account">Delete Account</option>
+            <option value="Delete Data">Delete Data</option>
+            <option value="Other">Other</option>
+          </select>
         </div>
         <div class="form-group">
-            <label for="issueDescription">Describe the issue:</label>
-            <textarea id="issueDescription" name="issueDescription" rows="3" required></textarea>
+          <label for="issueDescription" class="block mb-2 font-semibold text-slate-300">Describe the issue:</label>
+          <textarea id="issueDescription" name="issueDescription" rows="3" required 
+            class="w-full rounded-lg border border-slate-600 bg-slate-700 px-4 py-2 text-slate-200 placeholder-slate-400 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-500 focus:outline-none transition" 
+            placeholder="Please provide details about your request"></textarea>
         </div>
-
         <div class="text-center">
-            <button type="button" class="btn" onclick="submitForm()">Submit</button>
+          <button type="button" class="btn bg-gradient-to-br from-indigo-500 via-purple-600 to-purple-700 hover:from-purple-700 hover:via-indigo-600 hover:to-indigo-500 text-white font-bold py-3 px-8 rounded-full transition" onclick="submitForm()">Submit</button>
         </div>
-    </form>
-</div>
+      </form>
+    </div>
+  </main>
 
-<!-- ====== FOOTER ====== -->
-<footer>
-    <p>© 2025 Born2Earn Game Shop. All rights reserved.</p>
-</footer>
+  <!-- FOOTER -->
+  <footer class="mt-16 bg-slate-800 border-t border-slate-700 py-6 text-center text-indigo-400 text-sm select-none">
+    <p>© 2025 Born2Earn. All rights reserved.</p>
+  </footer>
 
-<!-- ====== WHATSAPP SUBMISSION SCRIPT ====== -->
-<script>
+  <!-- WHATSAPP SUBMISSION SCRIPT -->
+  <script>
     function submitForm() {
-        const formData = new FormData(document.getElementById('dataSafetyForm'));
-        let message = `*Name:* ${formData.get('name')}\n`;
-        message += `*Email:* ${formData.get('email')}\n`;
-        message += `*Mobile Number:* ${formData.get('mobile')}\n`;
-        message += `*Request Type:* ${formData.get('requestType')}\n`;
-        message += `*Issue Description:* ${formData.get('issueDescription')}`;
-        window.location.href = `https://wa.me/919547671067?text=${encodeURIComponent(message)}`;
+      const form = document.getElementById('dataSafetyForm');
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      const formData = new FormData(form);
+      let message = `*Name:* ${formData.get('name')}\n`;
+      message += `*Email:* ${formData.get('email')}\n`;
+      message += `*Mobile Number:* ${formData.get('mobile')}\n`;
+      message += `*Request Type:* ${formData.get('requestType')}\n`;
+      message += `*Issue Description:* ${formData.get('issueDescription')}`;
+      window.location.href = `https://wa.me/919547671067?text=${encodeURIComponent(message)}`;
     }
-</script>
+  </script>
 </body>
 </html>
