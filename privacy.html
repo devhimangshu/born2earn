@@ -1,247 +1,138 @@
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy - Born2Earn Game Shop</title>
-  <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Privacy Policy | Born2Earn</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
   <style>
-    :root {
-      --primary: #01ca12;
-      --secondary: #fffb10;
-      --accent: #000000;
-      --text: #333;
-      --bg: linear-gradient(to bottom, #a6ff83, #81ffa9);
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    body {
-      font-family: 'Comic Neue', cursive;
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.5;
-      font-size: 15px;
-    }
-    
-    header {
-      padding: 1.5rem 1rem;
-      text-align: center;
-      background: linear-gradient(135deg, #beb2f5, #fcd34d);
-    }
-    
-    header img {
-      width: 80px;
-      border-radius: 8px;
-      margin-bottom: 0.5rem;
-      animation: float 3s ease-in-out infinite;
-    }
-    
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-5px); }
-    }
-    
-    h1 {
-      font-size: 1.3rem;
-      background: linear-gradient(90deg, #1eff00, #8e00f4, #d0ff00);
-      background-size: 300% 100%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: shimmer 3s infinite linear;
-    }
-    
     @keyframes shimmer {
       0% { background-position: 200% 0; }
       100% { background-position: -200% 0; }
     }
-    
-    .marquee-container {
-      width: 100%;
-      overflow: hidden;
-      white-space: nowrap;
-      background: var(--secondary);
-      border-top: 2px dashed #000;
-      border-bottom: 2px dashed #000;
-      padding: 0.7rem 0;
-    }
-    
-    .marquee-content {
-      display: inline-block;
-      padding-left: 100%;
-      animation: marquee 15s linear infinite;
-      font-size: 0.85rem;
-    }
-    
     @keyframes marquee {
       0% { transform: translateX(0); }
       100% { transform: translateX(-100%); }
     }
-    
-    .container {
-      padding: 0 1rem;
-      max-width: 100%;
+    .shimmer {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 2.5rem;
+      background: linear-gradient(90deg, #ffffff, #93c5fd, #ffffff);
+      background-size: 200% 100%;
+      animation: shimmer 3s infinite linear;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
-    
-    h2 {
+    .marquee {
+      background-color: #1e293b;
       color: #facc15;
-      text-align: center;
-      margin: 1.5rem 0;
-      font-size: 1.2rem;
+      padding: 10px;
+      font-weight: 600;
+      overflow: hidden;
+      white-space: nowrap;
     }
-    
-    .policy-section {
-      background: white;
-      padding: 1.2rem;
-      border-radius: 8px;
-      margin: 1rem 0;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    .marquee span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 12s linear infinite;
     }
-    
-    h3 {
-      color: #93c5fd;
-      margin-bottom: 0.8rem;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
-    
-    p, li {
-      margin-bottom: 0.8rem;
-      font-size: 0.95rem;
-    }
-    
-    ul {
-      margin-left: 1.2rem;
-    }
-    
-    .warning-box {
-      background: #fff3cd;
-      border-left: 4px solid #ffc107;
-      padding: 1rem;
-      margin: 1.5rem 0;
-      border-radius: 0 4px 4px 0;
-    }
-    
-    footer {
-      background: linear-gradient(135deg, #bbf7d0, #c4b5fd);
-      padding: 1.2rem;
-      text-align: center;
-      font-size: 0.85rem;
-      border-top: 2px dashed #000;
-      margin-top: 2rem;
+    .container {
+      animation: fadeIn 1.5s ease-in-out;
     }
   </style>
 </head>
-<body>
-<header>
-  <img src="https://play-lh.googleusercontent.com/9DqI-7OD7e_66ul85JsxQRYE10uVZXN44JRG72sU1H76ZPZVbMx-SdaQqbO25bPCaA=w240-h480-rw" alt="Born2Earn Logo">
-  <h1 class="shimmer">Privacy Policy</h1>
-</header>
+<body class="bg-slate-900 text-slate-200 font-poppins overflow-x-hidden">
 
-<div class="marquee-container">
-  <div class="marquee-content">
-    ⚡ Your Data Security is Our Priority ⚡ Safe Transactions Guaranteed ⚡ 24/7 Support Available ⚡
-  </div>
-</div>
+  <!-- HEADER -->
+  <header class="bg-gradient-to-br from-indigo-500 via-purple-600 to-purple-700 rounded-b-[3rem] px-6 py-16 text-center text-white shadow-lg shadow-indigo-700/50">
+    <img src="https://play-lh.googleusercontent.com/9DqI-7OD7e_66ul85JsxQRYE10uVZXN44JRG72sU1H76ZPZVbMx-SdaQqbO25bPCaA=w240-h480-rw" alt="Born2Earn Logo, a stylized purple and blue game controller with lightning bolt" class="mx-auto w-24 rounded-2xl mb-6" />
+    <h1 class="shimmer select-none">Privacy Policy</h1>
+    <p class="mt-2 text-yellow-400 font-semibold tracking-wide">⚡ Your Data Security is Our Priority ⚡ Safe Transactions Guaranteed ⚡ 24/7 Support Available ⚡</p>
+  </header>
 
-<div class="container">
-  <div class="policy-section">
-    <h2>Data Collection & Usage</h2>
-    <p>We collect only necessary information to provide our services:</p>
-    <ul>
-      <li>✅ Account information (username, email, mobile number)</li>
-      <li>✅ Transaction details (purchase history, payment methods)</li>
-      <li>✅ Device information (for security and fraud prevention)</li>
-      <li>✅ Support communication records</li>
-    </ul>
-    <p>All data is encrypted and stored securely. We never sell your information to third parties.</p>
+  <!-- MARQUEE -->
+  <div class="marquee">
+    <span>⚡ Your Data Security is Our Priority ⚡ Safe Transactions Guaranteed ⚡ 24/7 Support Available ⚡</span>
   </div>
 
-  <div class="policy-section">
-    <h2>Payment Security</h2>
-    <div class="warning-box">
-      <h3>IMPORTANT PAYMENT POLICY</h3>
-      <p><strong>For your security:</strong></p>
-      <ul>
+  <!-- PRIVACY CONTENT -->
+  <main class="container max-w-3xl mx-auto bg-slate-800 rounded-2xl p-8 mt-12 shadow-lg shadow-indigo-700/40 space-y-10">
+    <section>
+      <h2 class="text-indigo-400 text-2xl font-semibold mb-4 flex items-center gap-3">
+        <i class="fas fa-database text-yellow-400"></i> Data Collection &amp; Usage
+      </h2>
+      <p class="leading-relaxed text-slate-300 text-base">
+        We collect only necessary information to provide our services:
+      </p>
+      <ul class="list-disc list-inside space-y-2 text-slate-300 text-base">
+        <li>✅ Account information (username, email, mobile number)</li>
+        <li>✅ Transaction details (purchase history, payment methods)</li>
+        <li>✅ Device information (for security and fraud prevention)</li>
+        <li>✅ Support communication records</li>
+      </ul>
+      <p class="mt-4 leading-relaxed text-slate-300 text-base">
+        All data is encrypted and stored securely. We never sell your information to third parties.
+      </p>
+    </section>
+
+    <section>
+      <h2 class="text-indigo-400 text-2xl font-semibold mb-4 flex items-center gap-3">
+        <i class="fas fa-lock text-yellow-400"></i> Payment Security
+      </h2>
+      <p class="font-semibold text-yellow-400 mb-4">IMPORTANT PAYMENT POLICY</p>
+      <p class="leading-relaxed text-slate-300 text-base mb-4">
+        For your security:
+      </p>
+      <ul class="list-disc list-inside space-y-2 text-slate-300 text-base mb-6">
         <li>❌ Never use someone else's bank account</li>
         <li>❌ Never share your payment details with others</li>
         <li>✅ Always use your own registered payment methods</li>
       </ul>
-      <p>Violations may result in account suspension.</p>
-    </div>
-    
-    <div class="warning-box">
-      <h3>पेमेंट सुरक्षा नीति</h3>
-      <ul>
+
+      <p class="font-semibold text-yellow-400 mb-2">पेमेंट सुरक्षा नीति</p>
+      <ul class="list-disc list-inside space-y-2 text-slate-300 text-base mb-6">
         <li>❌ किसी और के बैंक खाते का उपयोग न करें</li>
         <li>❌ अपने भुगतान विवरण किसी के साथ साझा न करें</li>
         <li>✅ हमेशा अपने स्वयं के पंजीकृत भुगतान विधियों का उपयोग करें</li>
       </ul>
-    </div>
-    
-    <div class="warning-box">
-      <h3>পেমেন্ট নিরাপত্তা নীতি</h3>
-      <ul>
+
+      <p class="font-semibold text-yellow-400 mb-2">পেমেন্ট নিরাপত্তা নীতি</p>
+      <ul class="list-disc list-inside space-y-2 text-slate-300 text-base">
         <li>❌ অন্য কারো ব্যাংক অ্যাকাউন্ট ব্যবহার করবেন না</li>
         <li>❌ আপনার পেমেন্ট বিবরণ কারো সাথে শেয়ার করবেন না</li>
         <li>✅ সর্বদা আপনার নিজস্ব নিবন্ধিত পেমেন্ট পদ্ধতি ব্যবহার করুন</li>
       </ul>
-    </div>
-  </div>
+    </section>
 
-  <div class="policy-section">
-    <h2>Contact Information</h2>
-    <p>For any privacy concerns or data deletion requests:</p>
-    <p><strong>Customer Care:</strong> +919547671066 / +919547671067</p>
-    <p><strong>Email:</strong> privacy@born2earn.com</p>
-    <p><strong>Hours:</strong> 24/7 support available</p>
-  </div>
-</div>
+    <section>
+      <h2 class="text-indigo-400 text-2xl font-semibold mb-4 flex items-center gap-3">
+        <i class="fas fa-phone-alt text-yellow-400"></i> Contact Information
+      </h2>
+      <p class="leading-relaxed text-slate-300 text-base mb-4">
+        For any privacy concerns or data deletion requests:
+      </p>
+      <p class="text-slate-300 text-base mb-2">
+        <strong>Customer Care:</strong> +919547671066 / +919547671067
+      </p>
+      <p class="text-slate-300 text-base mb-2">
+        <strong>Email:</strong> <a href="mailto:privacy@born2earn.com" class="text-indigo-400 hover:text-indigo-300 transition">privacy@born2earn.com</a>
+      </p>
+      <p class="text-slate-300 text-base">
+        <strong>Hours:</strong> 24/7 support available
+      </p>
+    </section>
+  </main>
 
-<footer>
-  <p>© 2025 Born2Earn Game Shop. All rights reserved.</p>
-  <p>Last Updated: June 2024</p>
-</footer>
-<!-- Code injected by live-server -->
-<script>
-	// <![CDATA[  <-- For SVG support
-	if ('WebSocket' in window) {
-		(function () {
-			function refreshCSS() {
-				var sheets = [].slice.call(document.getElementsByTagName("link"));
-				var head = document.getElementsByTagName("head")[0];
-				for (var i = 0; i < sheets.length; ++i) {
-					var elem = sheets[i];
-					var parent = elem.parentElement || head;
-					parent.removeChild(elem);
-					var rel = elem.rel;
-					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
-						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
-						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
-					}
-					parent.appendChild(elem);
-				}
-			}
-			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
-			var address = protocol + window.location.host + window.location.pathname + '/ws';
-			var socket = new WebSocket(address);
-			socket.onmessage = function (msg) {
-				if (msg.data == 'reload') window.location.reload();
-				else if (msg.data == 'refreshcss') refreshCSS();
-			};
-			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
-				console.log('Live reload enabled.');
-				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
-			}
-		})();
-	}
-	else {
-		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
-	}
-	// ]]>
-</script>
+  <!-- FOOTER -->
+  <footer class="mt-16 bg-slate-800 border-t border-slate-700 py-6 text-center text-indigo-400 text-sm select-none">
+    <p>© 2025 Born2Earn. All rights reserved.</p>
+    <p class="mt-1">Last Updated: June 2024</p>
+  </footer>
 </body>
 </html>
