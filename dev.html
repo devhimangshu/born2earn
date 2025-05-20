@@ -11,11 +11,15 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
   <style>
    @keyframes shimmer {
-      0% { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
+      0% {
+        background-position: 200% 0;
+      }
+      100% {
+        background-position: -200% 0;
+      }
     }
     .shimmer {
-      font-family: 'Poppins', sans-serif;
+      font-family: "Poppins", sans-serif;
       font-weight: 700;
       font-size: 2.5rem;
       background: linear-gradient(90deg, #ffffff, #93c5fd, #ffffff);
@@ -24,12 +28,49 @@
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
+    /* Hover effect for list items */
+    ul li.flex:hover {
+      color: #6366f1;
+      transform: translateX(6px);
+      transition: all 0.3s ease;
+    }
+    /* Hover effect for links */
+    a.hover-indigo:hover {
+      color: #6366f1;
+      text-decoration: underline;
+      transition: color 0.3s ease;
+    }
+    /* Button shimmer */
+    .btn-shimmer {
+      font-family: "Poppins", sans-serif;
+      font-weight: 700;
+      font-size: 1.125rem;
+      background: linear-gradient(90deg, #ffffff, #93c5fd, #ffffff);
+      background-size: 200% 100%;
+      animation: shimmer 3s infinite linear;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      border: 2px solid #6366f1;
+      padding: 0.5rem 1.5rem;
+      border-radius: 9999px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .btn-shimmer:hover {
+      background-color: #6366f1;
+      color: white;
+      -webkit-text-fill-color: unset;
+      animation: none;
+    }
   </style>
  </head>
- <body class="bg-slate-900 text-slate-200 font-poppins overflow-x-hidden">
+ <body class="bg-slate-900 text-slate-200 font-poppins overflow-x-hidden selection:bg-indigo-500 selection:text-white">
   <!-- HEADER -->
   <header class="bg-gradient-to-br from-indigo-500 via-purple-600 to-purple-700 rounded-b-[3rem] px-6 py-16 text-center text-white shadow-lg shadow-indigo-700/50">
-   <img alt="Developer portrait, young South Asian male with short black hair, wearing glasses and a casual shirt, smiling confidently" class="mx-auto w-36 h-36 rounded-full object-cover mb-6 border-4 border-indigo-400 shadow-lg" height="150" src="https://html-generator.com/uploads/images/2025/05/20/974181EC7A3FNF_.jpg" width="150"/>
+   <img alt="Developer portrait, young South Asian male with short black hair, wearing glasses and a casual shirt, smiling confidently" class="mx-auto w-36 h-36 rounded-full object-cover mb-6 border-4 border-indigo-400 shadow-lg transition-transform duration-500 hover:scale-105" height="150" src="https://html-generator.com/uploads/images/2025/05/20/974181EC7A3FNF_.jpg" width="150"/>
    <h1 class="shimmer select-none">
     Developer Profile
    </h1>
@@ -38,81 +79,73 @@
    </p>
   </header>
   <!-- MAIN CONTENT -->
-  <main class="max-w-3xl mx-auto bg-slate-800 rounded-3xl p-10 mt-12 shadow-lg shadow-indigo-700/40 space-y-8">
+  <main class="max-w-3xl mx-auto bg-slate-800 rounded-3xl p-10 mt-12 shadow-lg shadow-indigo-700/40 space-y-10">
    <section>
-    <h2 class="text-indigo-400 text-3xl font-semibold mb-4">
+    <h2 class="text-indigo-400 text-3xl font-semibold mb-4 select-text">
         Himangshu Paul
     </h2>
-    <p class="text-slate-300 text-lg leading-relaxed">
+    <p class="text-slate-300 text-lg leading-relaxed tracking-wide select-text">
         Himangshu is a passionate full-stack developer with over 4 years of experience building secure and scalable web applications. He specializes in modern JavaScript frameworks and Tailwind CSS, focusing on creating seamless user experiences for gaming and e-commerce platforms.
     </p>
    </section>
    <section>
-    <h3 class="text-yellow-400 text-2xl font-semibold mb-3 flex items-center gap-3">
-     <i class="fas fa-code">
-     </i>
+    <h3 class="text-yellow-400 text-2xl font-semibold mb-4 flex items-center gap-3 select-text">
+     <i class="fas fa-code"></i>
      Skills &amp; Technologies
     </h3>
-    <ul class="list-disc list-inside text-slate-300 space-y-2 text-lg">
-     <li>
-      JavaScript (ES6+), TypeScript
+    <ul class="space-y-4 text-slate-300 text-lg">
+     <li class="flex items-center gap-3 cursor-default select-text hover:text-indigo-400 transition-transform duration-300">
+      <i class="fab fa-java text-red-600 text-xl w-6 flex-shrink-0" title="Java icon"></i>
+      <span><strong>Programming:</strong> Java (Android), Python, PHP, JavaScript, HTML, CSS</span>
      </li>
-     <li>
-      React, Next.js, Node.js, Express
+     <li class="flex items-center gap-3 cursor-default select-text hover:text-yellow-400 transition-transform duration-300">
+      <i class="fas fa-tools text-yellow-400 text-xl w-6 flex-shrink-0" title="Development Tools icon"></i>
+      <span><strong>Development Tools:</strong> Android Studio, Firebase, Google Play Console, WordPress, Linux Commands</span>
      </li>
-     <li>
-      Tailwind CSS, CSS3, HTML5
+     <li class="flex items-center gap-3 cursor-default select-text hover:text-green-400 transition-transform duration-300">
+      <i class="fas fa-bullhorn text-green-400 text-xl w-6 flex-shrink-0" title="Digital Marketing icon"></i>
+      <span><strong>Digital Marketing:</strong> SEO, Google Ads, Affiliate Marketing, Shopify</span>
      </li>
-     <li>
-      REST APIs, GraphQL
-     </li>
-     <li>
-      Database: MongoDB, PostgreSQL
-     </li>
-     <li>
-      Version Control: Git, GitHub
-     </li>
-     <li>
-      Deployment: Vercel, Netlify, AWS
-     </li>
-     <li>
-      Security best practices &amp; performance optimization
+     <li class="flex items-center gap-3 cursor-default select-text hover:text-indigo-400 transition-transform duration-300">
+      <i class="fas fa-cloud text-indigo-400 text-xl w-6 flex-shrink-0" title="Cloud & Security icon"></i>
+      <span><strong>Cloud &amp; Security:</strong> API Integration, Firebase Authentication, Linux Administration</span>
      </li>
     </ul>
    </section>
    <section>
-    <h3 class="text-yellow-400 text-2xl font-semibold mb-3 flex items-center gap-3">
-     <i class="fas fa-briefcase">
-     </i>
+    <h3 class="text-yellow-400 text-2xl font-semibold mb-4 flex items-center gap-3 select-text">
+     <i class="fas fa-briefcase"></i>
      Role in Born2Earn
     </h3>
-    <p class="text-slate-300 text-lg leading-relaxed">
+    <p class="text-slate-300 text-lg leading-relaxed tracking-wide select-text">
      Himangshu designed and developed the entire Born2Earn platform, focusing on data security, fast performance, and a user-friendly interface. He implemented the secure payment integrations, real-time top-up processing, and customer support features to ensure a reliable experience for gamers across India.
     </p>
    </section>
    <section>
-    <h3 class="text-yellow-400 text-2xl font-semibold mb-3 flex items-center gap-3">
-     <i class="fas fa-envelope">
-     </i>
+    <h3 class="text-yellow-400 text-2xl font-semibold mb-4 flex items-center gap-3 select-text">
+     <i class="fas fa-envelope"></i>
      Contact &amp; Socials
     </h3>
-    <ul class="text-slate-300 space-y-2 text-lg">
-     <li>
-      <i class="fas fa-envelope mr-2 text-indigo-400">
-      </i>
-      <a class="hover:text-indigo-300 transition" href="mailto:himangshu.inbox@gmail.com">
+    <ul class="text-slate-300 space-y-3 text-lg">
+     <li class="flex items-center gap-3">
+      <i class="fas fa-envelope mr-2 text-indigo-400 text-xl w-6 flex-shrink-0" title="Email icon"></i>
+      <a class="hover-indigo transition" href="mailto:himangshu.inbox@gmail.com" tabindex="0">
        himangshu.inbox@gmail.com
       </a>
      </li>
-     <li>
-      
-     <li>
-      <i class="fab fa-linkedin mr-2 text-indigo-400">
-      </i>
-      <a class="hover:text-indigo-300 transition" href="https://www.linkedin.com/in/himangshupaul/" rel="noopener noreferrer" target="_blank">@himangshupaul
+     <li class="flex items-center gap-3">
+      <i class="fab fa-linkedin mr-2 text-indigo-400 text-xl w-6 flex-shrink-0" title="LinkedIn icon"></i>
+      <a class="hover-indigo transition" href="https://www.linkedin.com/in/himangshupaul/" rel="noopener noreferrer" target="_blank" tabindex="0">
+       @himangshupaul
       </a>
      </li>
     </ul>
+   </section>
+   <section class="pt-6 text-center">
+    <a aria-label="Hire me on WhatsApp" href="https://wa.me/919564605956" target="_blank" rel="noopener noreferrer" class="btn-shimmer inline-flex items-center justify-center mx-auto select-none" tabindex="0">
+     <i class="fab fa-whatsapp text-green-400 text-2xl"></i>
+     Hire Me on WhatsApp
+    </a>
    </section>
   </main>
   <!-- FOOTER -->
