@@ -1,0 +1,747 @@
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Born2Earn - Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #0f172a;
+      color: #e2e8f0;
+      overflow-x: hidden;
+    }
+    .shimmer {
+      font-weight: 700;
+      background: linear-gradient(90deg, #ffffff, #93c5fd, #ffffff);
+      background-size: 200% 100%;
+      animation: shimmer 3s infinite linear;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+    }
+    @keyframes shimmer {
+      0% {
+        background-position: 200% 0;
+      }
+      100% {
+        background-position: -200% 0;
+      }
+    }
+    .button-shimmer {
+      background: linear-gradient(135deg, #FFD700, #FFC300);
+      background-size: 200% 100%;
+      background-position: 0% 50%;
+      animation: shimmer 3s infinite linear;
+      color: #0f172a;
+      padding: 0.75rem 1.75rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+      display: inline-block;
+      text-decoration: none;
+    }
+    .button-shimmer:hover,
+    .button-shimmer:focus {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+      background: linear-gradient(135deg, #FFC300, #FFD700);
+      animation-play-state: paused;
+      outline: none;
+    }
+    /* Marquee */
+    .marquee {
+      background-color: #1e293b;
+      color: #facc15;
+      font-weight: 600;
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 0.75rem 0;
+    }
+    .marquee span {
+      display: inline-block;
+      padding-left: 100%;
+      animation: marquee 12s linear infinite;
+    }
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    /* Top-Up Services Auto Scroll */
+    .topup-scroll-container {
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none; /* Firefox */
+      scroll-snap-type: x mandatory;
+      -webkit-scroll-snap-type: x mandatory;
+    }
+    .topup-scroll-container::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
+    }
+    .topup-items {
+      display: flex;
+      gap: 2rem;
+      padding-bottom: 1rem;
+    }
+    .topup-item {
+      flex: 0 0 auto;
+      background-color: #334155;
+      border-radius: 1.25rem;
+      padding: 1.5rem 1.5rem 2rem;
+      text-align: center;
+      width: 220px;
+      box-shadow: 0 0 10px rgba(147, 197, 253, 0.2);
+      transition: transform 0.3s ease;
+      position: relative;
+      cursor: default;
+      scroll-snap-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 1rem;
+    }
+    .topup-item:focus-visible {
+      outline: 2px solid #facc15;
+      outline-offset: 3px;
+    }
+    .topup-item:hover {
+      transform: scale(1.05);
+    }
+    .topup-item img {
+      width: 120px;
+      height: 120px;
+      object-fit: contain;
+      margin: 0;
+      filter: drop-shadow(0 0 3px rgba(255 255 255 / 0.3));
+      flex-shrink: 0;
+    }
+    /* Shimmer effect on entire item box */
+    .topup-item.shimmer-box {
+      animation: shimmerBox 3s infinite linear;
+      background: linear-gradient(270deg, #334155, #4f46e5, #334155);
+      background-size: 600% 600%;
+      box-shadow: 0 0 15px #4f46e5;
+      position: relative;
+      z-index: 0;
+    }
+    .topup-item.shimmer-box::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 1.25rem;
+      background: linear-gradient(270deg, #334155, #4f46e5, #334155);
+      background-size: 600% 600%;
+      animation: shimmerBox 3s infinite linear;
+      z-index: -1;
+      filter: blur(8px);
+    }
+    @keyframes shimmerBox {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+    /* Shimmer effect on text inside each item */
+    .topup-item.shimmer-text p,
+    .topup-item.shimmer-text strong {
+      background: linear-gradient(90deg, #ffffff, #93c5fd, #ffffff);
+      background-size: 200% 100%;
+      animation: shimmer 3s infinite linear;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-fill-color: transparent;
+      display: inline-block;
+    }
+
+    /* Icon animation classes */
+    @keyframes bounce-rotate {
+      0%, 100% {
+        transform: translateY(0) rotate(0deg);
+      }
+      50% {
+        transform: translateY(-10px) rotate(15deg);
+      }
+    }
+    .icon-animate {
+      animation: bounce-rotate 0.6s ease forwards;
+    }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-200">
+
+  <!-- Header -->
+  <header
+    class="bg-gradient-to-br from-indigo-500 via-purple-600 to-purple-700 rounded-b-[3rem] py-12 px-6 text-center text-white select-none"
+  >
+    <img
+      src="https://html-generator.com/uploads/images/2023/12/27/90407_FP4TLZBEJ.png"
+      alt="Born2Earn Logo, a stylized purple and blue gaming controller with lightning bolt"
+      class="mx-auto w-24 rounded-2xl mb-6"
+      loading="lazy"
+      decoding="async"
+    />
+    <h1 class="text-4xl md:text-5xl shimmer mb-2 leading-tight">Welcome to Born2Earn</h1>
+    <p class="text-lg md:text-xl max-w-3xl mx-auto mb-6">
+      Trusted platform for all your gaming top-ups and gift cards!
+    </p>
+    <div class="flex flex-wrap justify-center gap-4">
+      <a
+        href="https://www.born2earngameshop.in/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="button-shimmer"
+        >Visit WebStore</a
+      >
+      <a
+        href="https://storage.appilix.com/uploads/app-apk-658ad7c756795-1703598023.apk"
+        download="Born2Earn"
+        class="button-shimmer"
+        >Download Apk</a
+      >
+      <a
+        href="https://play.google.com/store/apps/details?id=com.btoegameshop.app"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="button-shimmer"
+        >Google Play</a
+      >
+    </div>
+  </header>
+
+  <!-- Marquee -->
+  <div class="marquee" aria-label="Scrolling marquee with key features">
+    <span>⚡ Instant Game Top-ups | Secure Payments | 24x7 Support | Download Now ⚡</span>
+  </div>
+
+  <!-- Carousel Section -->
+  <section class="py-12 px-6 text-center">
+    <h2 class="text-indigo-300 text-3xl font-semibold mb-8">🔥 Trending Games & Top-Ups</h2>
+    <div
+      class="max-w-4xl mx-auto relative overflow-hidden rounded-3xl shadow-lg"
+      aria-roledescription="carousel"
+      aria-label="Trending games images carousel"
+    >
+      <div
+        id="carousel-slide"
+        class="flex transition-transform duration-500 ease-in-out"
+        style="will-change: transform"
+      >
+        <img
+          src="https://play-lh.googleusercontent.com/ARxus1DGSmyeM49-liTkLakaeBZ176dih5E5GCgxBopsLLchKqFfbGiTvnsle2T_ukUQ=w1052-h592-rw"
+          alt="Screenshot of a popular battle royale game showing characters in combat in a lush green environment"
+          class="w-full flex-shrink-0 object-cover rounded-3xl"
+          loading="lazy"
+          decoding="async"
+        />
+        <img
+          src="https://play-lh.googleusercontent.com/ob7IcANZPHA-2jyU0gr8c5htiYxRWvc0p_4AbEe--4RfyTM8SMNTunsBHqlkC08Vevip=w1052-h592-rw"
+          alt="Screenshot of a multiplayer shooting game with players in tactical gear in an urban setting"
+          class="w-full flex-shrink-0 object-cover rounded-3xl"
+          loading="lazy"
+          decoding="async"
+        />
+        <img
+          src="https://play-lh.googleusercontent.com/Drpid3JF6ZmBlDnY0RsHjat2omW9GwTzHNegArjFj75vCBcRkHYGCmU-iuHBN116Uj4=w1052-h592-rw"
+          alt="Screenshot of a first-person shooter game with futuristic weapons and a sci-fi environment"
+          class="w-full flex-shrink-0 object-cover rounded-3xl"
+          loading="lazy"
+          decoding="async"
+        />
+        <img
+          src="http://play-lh.googleusercontent.com/OE6mF_kYxqTjS1EbtpqxkiOZ0hdVmYKKWUrQV9SBanqVY-l-f67zZydBAGVjw-1iJMs=w1052-h592-rw"
+          alt="Screenshot of a popular mobile game showing characters in a colorful battle arena"
+          class="w-full flex-shrink-0 object-cover rounded-3xl"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- Top-Up Services with auto scroll and shimmer effect -->
+  <section
+    class="max-w-6xl mx-auto bg-slate-800 rounded-3xl shadow-lg p-8 my-12"
+    aria-labelledby="topup-services-title"
+  >
+    <h2
+      id="topup-services-title"
+      class="text-indigo-300 text-3xl font-semibold mb-10 text-center"
+    >
+      💎 Our Top-Up Services
+    </h2>
+    <div
+      class="topup-scroll-container"
+      role="list"
+      aria-label="Auto scrolling list of top-up services"
+      tabindex="0"
+    >
+      <div class="topup-items" id="topup-items">
+        <article
+          class="topup-item shimmer-box shimmer-text"
+          role="listitem"
+          tabindex="0"
+          aria-label="Free Fire Diamonds: Secure and instant top-ups at great prices."
+        >
+          <img
+            src="https://www.pngmart.com/files/22/Garena-Free-Fire-PNG-Pic.png"
+            alt="Free Fire Diamonds icon showing a shiny blue diamond with sparkles"
+            loading="lazy"
+            decoding="async"
+            class="interactive-icon"
+          />
+          <p><strong>Free Fire Diamonds</strong><br />Secure and instant top-ups at great prices.</p>
+        </article>
+
+        <article
+          class="topup-item shimmer-box shimmer-text"
+          role="listitem"
+          tabindex="0"
+          aria-label="BGMI UC: Quick UC delivery to boost your battles."
+        >
+          <img
+            src="https://totalpng.com//public/uploads/preview/pubg-character-png-transparent-picture-11669375346hym6nwpbkz.png"
+            alt="BGMI UC icon showing a soldier character in combat gear holding a rifle"
+            loading="lazy"
+            decoding="async"
+            class="interactive-icon"
+          />
+          <p><strong>BGMI UC</strong><br />Quick UC delivery to boost your battles.</p>
+        </article>
+
+        <article
+          class="topup-item shimmer-box shimmer-text"
+          role="listitem"
+          tabindex="0"
+          aria-label="COD Points: Power up your game with authentic COD Points."
+        >
+          <img
+            src="https://freepngimg.com/thumb/call_of_duty/11-2-call-of-duty-png-clipart.png"
+            alt="Call of Duty Points icon showing a military badge with stars and stripes"
+            loading="lazy"
+            decoding="async"
+            class="interactive-icon"
+          />
+          <p><strong>COD Points</strong><br />Power up your game with authentic COD Points.</p>
+        </article>
+
+        <article
+          class="topup-item shimmer-box shimmer-text"
+          role="listitem"
+          tabindex="0"
+          aria-label="Gift Cards: Amazon, Google Play & more — delivered instantly!"
+        >
+          <img
+            src="https://html-generator.com/uploads/images/2023/12/27/81701PHYA6U__NX.png"
+            alt="Gift Cards icon showing a wrapped gift box with a bow and sparkles"
+            loading="lazy"
+            decoding="async"
+            class="interactive-icon"
+          />
+          <p><strong>Gift Cards</strong><br />Amazon, Google Play &amp; more — delivered instantly!</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-12 px-6 text-center max-w-5xl mx-auto" aria-labelledby="why-choose-title">
+    <h2 id="why-choose-title" class="text-indigo-300 text-3xl font-semibold mb-10">💯 Why Choose Born2Earn?</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div
+        class="bg-slate-700 rounded-2xl p-6 shadow-md flex flex-col items-center hover:scale-105 transition-transform duration-300"
+        tabindex="0"
+      >
+        <i class="fas fa-bolt text-yellow-400 text-5xl mb-4 interactive-icon" aria-hidden="true"></i>
+        <h3 class="text-indigo-300 text-xl font-semibold mb-2">Instant Delivery</h3>
+        <p class="text-slate-300 text-sm">
+          Top-ups are processed in real-time, so you can start playing immediately.
+        </p>
+      </div>
+      <div
+        class="bg-slate-700 rounded-2xl p-6 shadow-md flex flex-col items-center hover:scale-105 transition-transform duration-300"
+        tabindex="0"
+      >
+        <i class="fas fa-lock text-yellow-400 text-5xl mb-4 interactive-icon" aria-hidden="true"></i>
+        <h3 class="text-indigo-300 text-xl font-semibold mb-2">Secure Payments</h3>
+        <p class="text-slate-300 text-sm">
+          Trusted payment partners with encrypted transactions for your safety.
+        </p>
+      </div>
+      <div
+        class="bg-slate-700 rounded-2xl p-6 shadow-md flex flex-col items-center hover:scale-105 transition-transform duration-300"
+        tabindex="0"
+      >
+        <i class="fas fa-thumbs-up text-yellow-400 text-5xl mb-4 interactive-icon" aria-hidden="true"></i>
+        <h3 class="text-indigo-300 text-xl font-semibold mb-2">Verified Sources</h3>
+        <p class="text-slate-300 text-sm">
+          All top-ups come from genuine sources — no risks, only rewards.
+        </p>
+      </div>
+      <div
+        class="bg-slate-700 rounded-2xl p-6 shadow-md flex flex-col items-center hover:scale-105 transition-transform duration-300"
+        tabindex="0"
+      >
+        <i class="fas fa-headphones-alt text-yellow-400 text-5xl mb-4 interactive-icon" aria-hidden="true"></i>
+        <h3 class="text-indigo-300 text-xl font-semibold mb-2">24x7 Support</h3>
+        <p class="text-slate-300 text-sm">
+          Get your queries resolved anytime through our quick customer support.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="py-12 px-6 text-center max-w-5xl mx-auto" aria-labelledby="how-it-works-title">
+    <h2 id="how-it-works-title" class="text-indigo-300 text-3xl font-semibold mb-10">📱 How It Works</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div
+        class="bg-slate-700 rounded-2xl p-6 shadow-md flex flex-col items-center hover:scale-105 transition-transform duration-300"
+        tabindex="0"
+      >
+        <i class="fas fa-gamepad text-yellow-400 text-5xl mb-4 interactive-icon" aria-hidden="true"></i>
+        <h3 class="text-indigo-300 text-xl font-semibold mb-2">1️⃣ Choose Your Game / Service</h3>
+        <p class="text-slate-300 text-sm">
+          Select your favorite game or the digital product you want to top-up.
+        </p>
+      </div>
+      <div
+        class="bg-slate-700 rounded-2xl p-6 shadow-md flex flex-col items-center hover:scale-105 transition-transform duration-300"
+        tabindex="0"
+      >
+        <i class="fas fa-credit-card text-yellow-400 text-5xl mb-4 interactive-icon" aria-hidden="true"></i>
+        <h3 class="text-indigo-300 text-xl font-semibold mb-2">2️⃣ Make Secure Payment</h3>
+        <p class="text-slate-300 text-sm">
+          Pay securely using UPI, Google Pay, Paytm, Visa, Mastercard, or other options.
+        </p>
+      </div>
+      <div
+        class="bg-slate-700 rounded-2xl p-6 shadow-md flex flex-col items-center hover:scale-105 transition-transform duration-300"
+        tabindex="0"
+      >
+        <i class="fas fa-bolt text-yellow-400 text-5xl mb-4 interactive-icon" aria-hidden="true"></i>
+        <h3 class="text-indigo-300 text-xl font-semibold mb-2">3️⃣ Instant Top-Up Delivery</h3>
+        <p class="text-slate-300 text-sm">
+          Receive your game credits, UC, diamonds, or gift cards instantly after payment.
+        </p>
+      </div>
+      <div
+        class="bg-slate-700 rounded-2xl p-6 shadow-md flex flex-col items-center hover:scale-105 transition-transform duration-300"
+        tabindex="0"
+      >
+        <i class="fas fa-smile text-yellow-400 text-5xl mb-4 interactive-icon" aria-hidden="true"></i>
+        <h3 class="text-indigo-300 text-xl font-semibold mb-2">4️⃣ Enjoy Your Game!</h3>
+        <p class="text-slate-300 text-sm">
+          Power up your gaming experience and enjoy your purchase without any hassle.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Customer Reviews -->
+  <section class="py-12 px-6 text-center max-w-5xl mx-auto" aria-labelledby="customer-reviews-title">
+    <h2 id="customer-reviews-title" class="text-indigo-300 text-3xl font-semibold mb-10">⭐ What Our Gamers Say</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <blockquote
+        class="bg-slate-700 rounded-2xl p-6 text-left shadow-md hover:shadow-indigo-500/50 transition-shadow duration-300"
+        tabindex="0"
+      >
+        <p class="italic mb-4">
+          “Fast delivery and reliable service! Got my Free Fire diamonds in minutes. Highly recommended!”
+        </p>
+        <footer class="text-right text-yellow-400 font-semibold">— Arjun Sharma</footer>
+      </blockquote>
+      <blockquote
+        class="bg-slate-700 rounded-2xl p-6 text-left shadow-md hover:shadow-indigo-500/50 transition-shadow duration-300"
+        tabindex="0"
+      >
+        <p class="italic mb-4">
+          “Excellent customer support! They helped me instantly when I had a payment issue. Great experience.”
+        </p>
+        <footer class="text-right text-yellow-400 font-semibold">— Priya Mehta</footer>
+      </blockquote>
+      <blockquote
+        class="bg-slate-700 rounded-2xl p-6 text-left shadow-md hover:shadow-indigo-500/50 transition-shadow duration-300"
+        tabindex="0"
+      >
+        <p class="italic mb-4">
+          “The best place to top-up my BGMI UC — quick, secure, and easy! Love Born2Earn.”
+        </p>
+        <footer class="text-right text-yellow-400 font-semibold">— Rohan Das</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Achievements / Milestones -->
+  <section
+    id="milestones"
+    class="py-12 px-6 bg-slate-800 border-t border-b border-slate-700 text-center max-w-4xl mx-auto rounded-3xl shadow-lg"
+    aria-labelledby="milestones-title"
+  >
+    <h2 id="milestones-title" class="text-indigo-300 text-3xl font-semibold mb-6">🏆 Our Journey So Far</h2>
+    <p class="mb-10 text-slate-300 max-w-xl mx-auto">
+      Proudly serving gamers across India with fast and secure top-up solutions.
+    </p>
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
+      <div
+        class="bg-slate-700 rounded-2xl p-6 shadow-md"
+        tabindex="0"
+        aria-label="Successful Top-Ups count"
+      >
+        <h3 class="text-yellow-400 text-4xl font-bold mb-2 counter" data-target="10000">0</h3>
+        <p class="text-indigo-300 font-semibold">Successful Top-Ups</p>
+      </div>
+      <div
+        class="bg-slate-700 rounded-2xl p-6 shadow-md"
+        tabindex="0"
+        aria-label="Happy Customers count"
+      >
+        <h3 class="text-yellow-400 text-4xl font-bold mb-2 counter" data-target="5000">0</h3>
+        <p class="text-indigo-300 font-semibold">Happy Customers</p>
+      </div>
+      <div
+        class="bg-slate-700 rounded-2xl p-6 shadow-md"
+        tabindex="0"
+        aria-label="Serving Since year"
+      >
+        <h3 class="text-yellow-400 text-4xl font-bold mb-2 counter" data-target="2020">0</h3>
+        <p class="text-indigo-300 font-semibold">Serving Since</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer
+    class="bg-slate-800 text-indigo-300 text-center py-12 px-6 mt-16 select-none"
+    role="contentinfo"
+  >
+    <div class="flex justify-center space-x-6 mb-6" aria-label="Social media links">
+      <a
+        href="https://www.facebook.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Facebook"
+        class="hover:text-yellow-400 transition-colors interactive-icon"
+      >
+        <i class="fab fa-facebook-f text-2xl"></i>
+      </a>
+      <a
+        href="http://wa.me/+919933525757"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="WhatsApp"
+        class="hover:text-yellow-400 transition-colors interactive-icon"
+      >
+        <i class="fab fa-whatsapp text-2xl"></i>
+      </a>
+      <a
+        href="https://www.instagram.com/born2earn_"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Instagram"
+        class="hover:text-yellow-400 transition-colors interactive-icon"
+      >
+        <i class="fab fa-instagram text-2xl"></i>
+      </a>
+      <a
+        href="https://youtube.com/@B2ERaaz"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="YouTube"
+        class="hover:text-yellow-400 transition-colors interactive-icon"
+      >
+        <i class="fab fa-youtube text-2xl"></i>
+      </a>
+      <a
+        href="https://t.me/Born2EarnGame"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Telegram"
+        class="hover:text-yellow-400 transition-colors interactive-icon"
+      >
+        <i class="fab fa-telegram-plane text-2xl"></i>
+      </a>
+    </div>
+
+    <address class="not-italic mb-6 space-y-1">
+      <p>📞 <strong>Phone:</strong> <a href="tel:+919547671067" class="hover:text-yellow-400">+91 95476 71067</a></p>
+      <p>
+        ✉️ <strong>Email:</strong>
+        <a href="mailto:born2earn1995@gmail.com" class="hover:text-yellow-400 underline"
+          >born2earn1995@gmail.com</a
+        >
+      </p>
+    </address>
+
+    <nav aria-label="Footer navigation" class="mb-6 space-x-4 text-sm">
+      <a href="/about" class="hover:text-yellow-400 transition-colors">About Us</a>
+      <span aria-hidden="true">|</span>
+      <a href="/privacy" class="hover:text-yellow-400 transition-colors">Privacy Policy</a>
+      <span aria-hidden="true">|</span>
+      <a href="/data-safety" class="hover:text-yellow-400 transition-colors">Data Safety</a>
+      <span aria-hidden="true">|</span>
+      <a href="/refund-cancellation" class="hover:text-yellow-400 transition-colors"
+        >Refund &amp; Cancellation</a
+      >
+    </nav>
+
+    <p class="text-xs text-slate-400 select-text">© 2025 Born2Earn. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Carousel functionality
+    const carouselSlide = document.getElementById('carousel-slide');
+    let counter = 0;
+    const totalSlides = carouselSlide.children.length;
+
+    function updateCarousel() {
+      const slideWidth = carouselSlide.children[0].clientWidth;
+      carouselSlide.style.transform = `translateX(${-slideWidth * counter}px)`;
+    }
+
+    function nextSlide() {
+      counter = (counter + 1) % totalSlides;
+      updateCarousel();
+    }
+
+    setInterval(nextSlide, 4000);
+
+    // Animate counters on scroll
+    function animateCounter(counter) {
+      const target = +counter.getAttribute('data-target');
+      let current = 0;
+      const speed = 200;
+
+      const update = () => {
+        const increment = Math.ceil(target / speed);
+        if (current < target) {
+          current += increment;
+          counter.innerText = current > target ? target : current;
+          requestAnimationFrame(update);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      update();
+    }
+
+    const observer = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.querySelectorAll('.counter').forEach((counter) => {
+              if (!counter.classList.contains('counted')) {
+                animateCounter(counter);
+                counter.classList.add('counted');
+              }
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    const milestoneSection = document.querySelector('#milestones');
+    if (milestoneSection) {
+      observer.observe(milestoneSection);
+    }
+
+    // Top-Up Services auto scroll and shimmer effect cycling
+    const topupContainer = document.querySelector('.topup-scroll-container');
+    const topupItems = document.querySelectorAll('.topup-item');
+    let scrollAmount = 0;
+    const scrollStep = 1; // pixels per frame
+    const scrollInterval = 20; // ms between frames
+
+    // Function to add shimmer effect to all items together
+    function addShimmerToAll() {
+      topupItems.forEach((item) => {
+        item.classList.add('shimmer-box', 'shimmer-text');
+      });
+    }
+
+    function removeShimmerFromAll() {
+      topupItems.forEach((item) => {
+        item.classList.remove('shimmer-box', 'shimmer-text');
+      });
+    }
+
+    // Start with shimmer on all items
+    addShimmerToAll();
+
+    // Auto scroll function
+    function autoScroll() {
+      if (!topupContainer) return;
+      scrollAmount += scrollStep;
+      if (scrollAmount >= topupContainer.scrollWidth - topupContainer.clientWidth) {
+        scrollAmount = 0;
+      }
+      topupContainer.scrollLeft = scrollAmount;
+    }
+
+    let scrollTimer = setInterval(autoScroll, scrollInterval);
+
+    // Pause auto scroll on user interaction
+    topupContainer.addEventListener('mouseenter', () => {
+      clearInterval(scrollTimer);
+    });
+    topupContainer.addEventListener('mouseleave', () => {
+      scrollTimer = setInterval(autoScroll, scrollInterval);
+    });
+    topupContainer.addEventListener('touchstart', () => {
+      clearInterval(scrollTimer);
+    });
+    topupContainer.addEventListener('touchend', () => {
+      scrollTimer = setInterval(autoScroll, scrollInterval);
+    });
+
+    // Icon animation on hover and click
+    const interactiveIcons = document.querySelectorAll('.interactive-icon');
+
+    interactiveIcons.forEach(icon => {
+      icon.style.cursor = 'pointer';
+
+      icon.addEventListener('mouseenter', () => {
+        icon.classList.add('icon-animate');
+      });
+
+      icon.addEventListener('animationend', () => {
+        icon.classList.remove('icon-animate');
+      });
+
+      icon.addEventListener('click', () => {
+        icon.classList.add('icon-animate');
+      });
+    });
+  </script>
+
+  <script
+    type="text/javascript"
+    async
+    src="https://client.crisp.chat/l.js"
+  ></script>
+  <script>
+    window.$crisp = [];
+    window.CRISP_WEBSITE_ID = '0ddef963-7f2e-4540-82bf-805fb9dece80';
+  </script>
+</body>
+</html>
